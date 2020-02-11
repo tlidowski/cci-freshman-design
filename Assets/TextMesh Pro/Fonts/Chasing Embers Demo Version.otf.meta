@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: c955251e72d25ab409d92d906d304c4c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Chasing Embers Demo Version
+  fontNames:
+  - Chasing Embers Demo Version
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b8294470047a8b143bf226bc211b1f0b, type: 3}
+  - {fileID: 12800000, guid: 3e459fa9c1653f148a7d4bd3181e0c99, type: 3}
+  - {fileID: 12800000, guid: c2888e6fe0508d54fb4f289876e5426f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
