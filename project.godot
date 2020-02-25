@@ -17,12 +17,13 @@ _global_script_class_icons={
 
 config/name="sigh"
 run/main_scene="res://Scene1.tscn"
-config/icon="res://icon.png"
 
 [display]
 
 window/size/width=640
 window/size/height=360
+window/size/test_width=1024
+window/size/test_height=720
 
 [rendering]
 
