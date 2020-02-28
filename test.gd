@@ -1,8 +1,5 @@
-# Much of the code is referenced from youtuber UmaiPixel's "GoDot 3 - Platformer Tutorial" videos.
-# I did not copy and paste anything.
-extends KinematicBody2D
-
-onready var sprite = get_node("AnimatedSprite")
+extends Node2D
+onready var sprite = get_node("Player/AnimatedSprite")
 
 const SPEED = 100
 const GRAVITY = 9.81
@@ -17,30 +14,30 @@ var attacking = false
 
 
 func _physics_process(_delta):
-	#moving left and right, jumping, gravity
+	
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
-		if sign($Position2D.position.x) < 0:
-			$Position2D.position.x *= -1
+		if sign($Player/Position2D.position.x) == -1:
+			$Player/Position2D.position.x *= -1
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
-		if sign($Position2D.position.x) > 0:
-			$Position2D.position.x *= -1
+		if sign($Player/Position2D.position.x) == 1:
+			$Player/Position2D.position.x *= -1
 	else:
 		velocity.x = 0
 	if Input.is_action_pressed("ui_up"):
 		if on_ground == true:
 			velocity.y = JUMP_POWER
 			on_ground = false
-	#player attack
+	
 	if Input.is_action_just_pressed("ui_focus_next"): #press Tab
 		var bullet = BULLET.instance()
-		if sign($Position2D.position.x) > 0:
+		if sign($Player/Position2D.position.x) == 1:
 			bullet.set_bullet_direction(1)
 		else:
 			bullet.set_bullet_direction(-1)
 		get_parent().add_child(bullet)
-		bullet.position = $Position2D.global_position
+		bullet.position = $Player.global_position
 	
 	velocity.y +=  GRAVITY
 	
@@ -51,7 +48,7 @@ func _physics_process(_delta):
 
 	velocity = move_and_slide(velocity, FLOOR)
 
-	#sprite animations~
+	
 	if velocity.x == 0:
 		if Input.is_action_pressed("ui_focus_next"):
 			anim = "attack"
@@ -66,5 +63,6 @@ func _physics_process(_delta):
 		sprite.set_flip_h(false)
 	elif velocity.x < 0:
 		sprite.set_flip_h(true)
+
 	sprite.play(anim)
 	

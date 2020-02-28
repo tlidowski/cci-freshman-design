@@ -1,106 +1,49 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://tileset1.2.tres" type="TileSet" id=1]
 [ext_resource path="res://Taiga-Asset-Pack_vnitti/PNG/Middleground.png" type="Texture" id=2]
-[ext_resource path="res://player.pale.red/tile024.png" type="Texture" id=6]
-[ext_resource path="res://player.pale.red/tile026.png" type="Texture" id=9]
-[ext_resource path="res://player.pale.red/tile027.png" type="Texture" id=10]
-[ext_resource path="res://player.pale.red/tile029.png" type="Texture" id=12]
-[ext_resource path="res://player.pale.red/tile009.png" type="Texture" id=14]
-[ext_resource path="res://player.pale.red/tile011.png" type="Texture" id=16]
-[ext_resource path="res://player.pale.red/tile025.png" type="Texture" id=19]
-[ext_resource path="res://player.pale.red/tile028.png" type="Texture" id=20]
-[ext_resource path="res://player.pale.red/tile010.png" type="Texture" id=21]
-[ext_resource path="res://player.pale.red/tile031.png" type="Texture" id=22]
-[ext_resource path="res://player.pale.red/tile012.png" type="Texture" id=24]
-[ext_resource path="res://player.pale.red/tile030.png" type="Texture" id=29]
-[ext_resource path="res://player.pale.red/tile042.png" type="Texture" id=32]
-[ext_resource path="res://player.pale.red/tile044.png" type="Texture" id=33]
-[ext_resource path="res://player.pale.red/tile041.png" type="Texture" id=35]
-[ext_resource path="res://player.pale.red/tile040.png" type="Texture" id=36]
-[ext_resource path="res://Player.gd" type="Script" id=37]
-
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 9.94577
-height = 21.7013
-
-[sub_resource type="SpriteFrames" id=2]
-animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 24 ) ],
-"loop": true,
-"name": "idle",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 36 ), ExtResource( 35 ), ExtResource( 35 ), ExtResource( 32 ), ExtResource( 33 ) ],
-"loop": true,
-"name": "attack",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 19 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 20 ), ExtResource( 12 ), ExtResource( 29 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "move",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 24.6082, 37.6681 )
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 337.479, 32.8747 )
+extents = Vector2( 24.6082, 37.6681 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 10, 193.728 )
+extents = Vector2( 337.479, 32.8747 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 24.3028, 16 )
+extents = Vector2( 10, 193.728 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 119.634, 41.2314 )
+extents = Vector2( 24.3028, 16 )
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 48.0998, 24.0593 )
+extents = Vector2( 119.634, 41.2314 )
 
 [sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 48.0998, 24.0593 )
+
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 32.1268, 16.1315 )
 
 [node name="Tutorial" type="Node2D"]
-position = Vector2( 0, -2.27203 )
+position = Vector2( 0.197605, -0.476192 )
 
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 319.959, 158.225 )
 scale = Vector2( 1.66295, 1.67706 )
 texture = ExtResource( 2 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
-
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 8.3042, 85.7109 )
-script = ExtResource( 37 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 23.9195, 151.932 )
-scale = Vector2( 0.759999, 0.68 )
-shape = SubResource( 1 )
-
-[node name="sprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 24.9287, 153.127 )
-frames = SubResource( 2 )
-animation = "attack"
-frame = 4
-
-[node name="Position2D" type="Position2D" parent="Player"]
-position = Vector2( -154.067, -29.5256 )
 
 [node name="Terrain" type="Node2D" parent="."]
-
-[node name="Floor" type="StaticBody2D" parent="Terrain"]
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
+
+[node name="Floor" type="StaticBody2D" parent="Terrain"]
 
 [node name="TileMap" type="TileMap" parent="Terrain/Floor"]
 position = Vector2( 0, 2 )
@@ -111,16 +54,13 @@ tile_data = PoolIntArray( 1048593, 7, 0, 1048594, 1, 0, 1048595, 536870919, 0, 1
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/Floor"]
 position = Vector2( 295.427, 295.223 )
-shape = SubResource( 9 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Floor"]
 position = Vector2( 319.845, 338.74 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="Wall" type="StaticBody2D" parent="Terrain"]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="TileMap" type="TileMap" parent="Terrain/Wall"]
 tile_set = ExtResource( 1 )
@@ -131,13 +71,10 @@ tile_data = PoolIntArray( 40, 12, 0, 65576, 12, 0, 131112, 12, 0, 196648, 12, 0,
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Wall"]
 visible = false
 position = Vector2( 647.001, 187 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Wall2" type="StaticBody2D" parent="Terrain"]
 position = Vector2( -656.001, -1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="TileMap" type="TileMap" parent="Terrain/Wall2"]
 tile_set = ExtResource( 1 )
@@ -148,7 +85,7 @@ tile_data = PoolIntArray( 40, 12, 0, 65576, 12, 0, 131112, 12, 0, 196648, 12, 0,
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Wall2"]
 visible = false
 position = Vector2( 647.001, 187 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Terrain"]
 position = Vector2( 21.4221, -15.3819 )
@@ -161,38 +98,50 @@ tile_data = PoolIntArray( 393218, 7, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
 position = Vector2( 120.258, 256.616 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
 position = Vector2( 199.588, 223.802 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
 position = Vector2( 279.714, 191.723 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
 position = Vector2( 184.185, 144.571 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
 position = Vector2( 471.956, 184.363 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
 position = Vector2( 79.5953, 119.423 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
 position = Vector2( 31.7825, 288.093 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Flowers!" type="TileMap" parent="Terrain"]
-position = Vector2( -0.327393, 0 )
+position = Vector2( -18.2895, 2.39493 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 1179651, 26, 0, 1179659, 27, 0, 1179665, 27, 0, 1179673, 28, 0, 1179678, 27, 0, 1179683, 30, 0, 1179686, 27, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -168.763, 202.949 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 298.155, -115.663 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 640
 __meta__ = {
 "_edit_lock_": true
 }
