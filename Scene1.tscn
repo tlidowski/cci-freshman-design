@@ -32,13 +32,13 @@ extents = Vector2( 48.0998, 24.0593 )
 extents = Vector2( 32.1268, 16.1315 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 7.24763, 15.2106 )
+extents = Vector2( 6, 11 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 10, 14.6613 )
+extents = Vector2( 8.0004, 11 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 7.99997, 17 )
+extents = Vector2( 7.00003, 18 )
 
 [node name="Tutorial" type="Node2D"]
 position = Vector2( 0.197605, -0.476192 )
@@ -161,54 +161,53 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="RottingZombie" type="KinematicBody2D" parent="Node2D"]
+[node name="RottingZombie" type="KinematicBody2D" parent="."]
 script = ExtResource( 7 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RottingZombie"]
-position = Vector2( 100.802, 66.4762 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RottingZombie"]
+position = Vector2( 86.8024, 69.4762 )
 shape = SubResource( 8 )
 
-[node name="tile000" type="Sprite" parent="Node2D/RottingZombie"]
-position = Vector2( 100.802, 58.4762 )
-scale = Vector2( 0.613916, 0.630793 )
+[node name="tile000" type="Sprite" parent="RottingZombie"]
+position = Vector2( 86.8024, 65.4762 )
+scale = Vector2( 0.518062, 0.446761 )
 texture = ExtResource( 5 )
 
-[node name="RayCast2D" type="RayCast2D" parent="Node2D/RottingZombie/tile000"]
-position = Vector2( 11.4022, 12.6824 )
+[node name="RayCast2D" type="RayCast2D" parent="RottingZombie/tile000"]
+position = Vector2( 9.77334, 14.2677 )
 enabled = true
 cast_to = Vector2( 0, 15 )
 
-[node name="HeadlessZombie" type="KinematicBody2D" parent="Node2D"]
+[node name="HeadlessZombie" type="KinematicBody2D" parent="."]
 script = ExtResource( 9 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/HeadlessZombie"]
-position = Vector2( 205.802, 95.4762 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeadlessZombie"]
+position = Vector2( 205.802, 101.476 )
 shape = SubResource( 9 )
 
-[node name="tile001" type="Sprite" parent="Node2D/HeadlessZombie"]
-position = Vector2( 205.802, 81.4762 )
+[node name="tile001" type="Sprite" parent="HeadlessZombie"]
+position = Vector2( 205.802, 94.4762 )
+scale = Vector2( 0.8125, 0.59375 )
 texture = ExtResource( 6 )
 
-[node name="RayCast2D" type="RayCast2D" parent="Node2D/HeadlessZombie/tile001"]
-position = Vector2( 12, 14 )
+[node name="RayCast2D" type="RayCast2D" parent="HeadlessZombie/tile001"]
+position = Vector2( 11.0769, 16.8421 )
 enabled = true
-cast_to = Vector2( 0, 15 )
+cast_to = Vector2( 0, 13 )
 
-[node name="GreenShortsZombie" type="KinematicBody2D" parent="Node2D"]
+[node name="GreenShortsZombie" type="KinematicBody2D" parent="."]
 script = ExtResource( 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/GreenShortsZombie"]
-position = Vector2( 461.802, 115.476 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GreenShortsZombie"]
+position = Vector2( 503.802, 109.476 )
 shape = SubResource( 10 )
 
-[node name="tile002" type="Sprite" parent="Node2D/GreenShortsZombie"]
-position = Vector2( 462.052, 108.601 )
-scale = Vector2( 0.739583, 0.597657 )
+[node name="tile002" type="Sprite" parent="GreenShortsZombie"]
+position = Vector2( 503.802, 104.476 )
+scale = Vector2( 0.739583, 0.720704 )
 texture = ExtResource( 4 )
 
-[node name="RayCast2D" type="RayCast2D" parent="Node2D/GreenShortsZombie/tile002"]
-position = Vector2( 13.0286, 14.7957 )
+[node name="RayCast2D" type="RayCast2D" parent="GreenShortsZombie/tile002"]
+position = Vector2( 9.46476, 16.6504 )
 enabled = true
 cast_to = Vector2( 0, 15 )

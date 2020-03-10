@@ -1,5 +1,5 @@
 extends KinematicBody2D
-const SPEED = 50
+const SPEED = 30
 const GRAVITY = 9.81
 const JUMP_POWER = -275
 const FLOOR = Vector2(0, -1)
@@ -13,10 +13,11 @@ func _physics_process(delta):
 	velocity = move_and_slide(velocity, FLOOR)
 	var switchvel = RandomNumberGenerator.new()
 	switchvel.randomize()
-	var switchingvel = switchvel.randi_range(3,5)
+	var switchingvel = switchvel.randi_range(1,4)
 	if switchingvel == 4:
-		dirup *= -2
+		dirup = -1
 	else:
+		dir = 1
 		dirup = 1
 	if is_on_wall():
 		dir *= -1
@@ -25,6 +26,7 @@ func _physics_process(delta):
 			dir *= -1
 			$tile001/RayCast2D.position.x *= -1
 	elif $tile001/RayCast2D.is_colliding() != true:
-		dir *= -2
+		dir *= -1
 		$tile001/RayCast2D.position.x *= -1
+	
 

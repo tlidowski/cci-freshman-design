@@ -21,6 +21,6 @@ func _physics_process(delta):
 		dir *= -1
 		$tile002/RayCast2D.position.x *= -1
 	else:
-		if time % (10) == 0:
+		if time % (100000000) == 0:
 			dir *= -1
 
