@@ -1,8 +1,14 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://tileset1.2.tres" type="TileSet" id=1]
 [ext_resource path="res://Taiga-Asset-Pack_vnitti/PNG/Middleground.png" type="Texture" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://zombie.green/tile000.png" type="Texture" id=4]
+[ext_resource path="res://zombie.rotting/tile000.png" type="Texture" id=5]
+[ext_resource path="res://zombie.headless/tile000.png" type="Texture" id=6]
+[ext_resource path="res://RottingZombie.gd" type="Script" id=7]
+[ext_resource path="res://GreenShortsZombie.gd" type="Script" id=8]
+[ext_resource path="res://HeadlessZombie.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.6082, 37.6681 )
@@ -24,6 +30,15 @@ extents = Vector2( 48.0998, 24.0593 )
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 32.1268, 16.1315 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 7.24763, 15.2106 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10, 14.6613 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 7.99997, 17 )
 
 [node name="Tutorial" type="Node2D"]
 position = Vector2( 0.197605, -0.476192 )
@@ -145,3 +160,55 @@ limit_bottom = 640
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="RottingZombie" type="KinematicBody2D" parent="Node2D"]
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/RottingZombie"]
+position = Vector2( 100.802, 66.4762 )
+shape = SubResource( 8 )
+
+[node name="tile000" type="Sprite" parent="Node2D/RottingZombie"]
+position = Vector2( 100.802, 58.4762 )
+scale = Vector2( 0.613916, 0.630793 )
+texture = ExtResource( 5 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Node2D/RottingZombie/tile000"]
+position = Vector2( 11.4022, 12.6824 )
+enabled = true
+cast_to = Vector2( 0, 15 )
+
+[node name="HeadlessZombie" type="KinematicBody2D" parent="Node2D"]
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/HeadlessZombie"]
+position = Vector2( 205.802, 95.4762 )
+shape = SubResource( 9 )
+
+[node name="tile001" type="Sprite" parent="Node2D/HeadlessZombie"]
+position = Vector2( 205.802, 81.4762 )
+texture = ExtResource( 6 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Node2D/HeadlessZombie/tile001"]
+position = Vector2( 12, 14 )
+enabled = true
+cast_to = Vector2( 0, 15 )
+
+[node name="GreenShortsZombie" type="KinematicBody2D" parent="Node2D"]
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/GreenShortsZombie"]
+position = Vector2( 461.802, 115.476 )
+shape = SubResource( 10 )
+
+[node name="tile002" type="Sprite" parent="Node2D/GreenShortsZombie"]
+position = Vector2( 462.052, 108.601 )
+scale = Vector2( 0.739583, 0.597657 )
+texture = ExtResource( 4 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Node2D/GreenShortsZombie/tile002"]
+position = Vector2( 13.0286, 14.7957 )
+enabled = true
+cast_to = Vector2( 0, 15 )
