@@ -12,7 +12,7 @@ const BULLET = preload("res://Pewpew.tscn")
 
 var velocity = Vector2()
 var anim = "idle"
-var on_ground = false
+var on_ground = true
 var attacking = false
 
 
@@ -28,6 +28,7 @@ func _physics_process(_delta):
 			$Position2D.position.x *= -1
 	else:
 		velocity.x = 0
+		
 	if Input.is_action_pressed("ui_up"):
 		if on_ground == true:
 			velocity.y = JUMP_POWER
@@ -58,7 +59,7 @@ func _physics_process(_delta):
 		else:
 			anim = "idle"
 	else:
-		if Input.is_action_pressed("ui_down"):
+		if Input.is_action_pressed("ui_focus_next"):
 			anim = "attack"
 		else:
 			anim = "move"
