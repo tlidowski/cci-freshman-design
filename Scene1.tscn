@@ -37,10 +37,10 @@ extents = Vector2( 48.0998, 24.0593 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 32.1268, 16.1315 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 7.00003, 10.6182 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 13 ), ExtResource( 4 ) ],
 "loop": true,
@@ -48,10 +48,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 6, 11 )
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 5 ), ExtResource( 15 ) ],
 "loop": true,
@@ -59,10 +59,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 8.0004, 11 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=13]
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
@@ -198,12 +198,12 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/GreenShortsZombie"]
 position = Vector2( 503.802, 116.476 )
-shape = SubResource( 10 )
+shape = SubResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/GreenShortsZombie"]
 position = Vector2( 503.286, 113.993 )
 scale = Vector2( 0.569042, 0.463595 )
-frames = SubResource( 12 )
+frames = SubResource( 9 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/GreenShortsZombie/AnimatedSprite"]
@@ -218,12 +218,12 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/GreenShortsZombie2"]
 position = Vector2( 503.802, 116.476 )
-shape = SubResource( 10 )
+shape = SubResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/GreenShortsZombie2"]
 position = Vector2( 503.286, 113.993 )
 scale = Vector2( 0.569042, 0.463595 )
-frames = SubResource( 12 )
+frames = SubResource( 9 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/GreenShortsZombie2/AnimatedSprite"]
@@ -238,12 +238,12 @@ script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/RottingZombie"]
 position = Vector2( 86.8024, 69.4762 )
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/RottingZombie"]
 position = Vector2( 85.7026, 67.5208 )
 scale = Vector2( 0.507958, 0.403484 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/RottingZombie/AnimatedSprite"]
@@ -258,12 +258,12 @@ script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/RottingZombie2"]
 position = Vector2( 86.8024, 69.4762 )
-shape = SubResource( 8 )
+shape = SubResource( 10 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/RottingZombie2"]
 position = Vector2( 85.7026, 67.5208 )
 scale = Vector2( 0.507958, 0.403484 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/RottingZombie2/AnimatedSprite"]
@@ -278,12 +278,12 @@ script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/HeadlessZombie"]
 position = Vector2( 205.802, 101.476 )
-shape = SubResource( 9 )
+shape = SubResource( 12 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/HeadlessZombie"]
 position = Vector2( 205.081, 94.2562 )
 scale = Vector2( 0.669904, 0.58738 )
-frames = SubResource( 11 )
+frames = SubResource( 13 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/HeadlessZombie/AnimatedSprite"]
@@ -298,12 +298,12 @@ script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/HeadlessZombie2"]
 position = Vector2( 205.802, 101.476 )
-shape = SubResource( 9 )
+shape = SubResource( 12 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/HeadlessZombie2"]
 position = Vector2( 205.081, 94.2562 )
 scale = Vector2( 0.669904, 0.58738 )
-frames = SubResource( 11 )
+frames = SubResource( 13 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/HeadlessZombie2/AnimatedSprite"]

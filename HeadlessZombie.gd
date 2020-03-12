@@ -15,6 +15,7 @@ var is_dead = false
 onready var time = OS.get_ticks_msec()
 onready var zombie = get_node("AnimatedSprite")
 
+#When function is called, all movement ceases and zombie is destroyed.
 func dead():
 	is_dead = true
 	queue_free()
@@ -28,6 +29,7 @@ func _physics_process(delta):
 		switchvel.randomize()
 		var switchingvel = switchvel.randi_range(1, 100)
 		
+		#Randomized movement. 
 		if switchingvel == 1:
 			dir = 1
 		elif switchingvel == 100:
@@ -36,15 +38,19 @@ func _physics_process(delta):
 			if on_ground == true:
 				velocity.y = JUMP_POWER
 				on_ground = false
+				
+		#If touching a wall, go the other direction.
 		if is_on_wall():
 			dir *= -1
 			$AnimatedSprite/RayCast2D.position.x *= -1
-			
+		
+		#No double jumping!
 		if is_on_floor():
 			on_ground = true
 		else:
 			on_ground = false
 	
+		#Switches direction of zombie depending on direction it's velocity is.
 		if dir > 0:
 			zombie.set_flip_h(false)
 		elif dir < 0:
