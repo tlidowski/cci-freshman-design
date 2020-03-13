@@ -15,14 +15,14 @@ _global_script_class_icons={
 
 [application]
 
-config/name="sigh"
-run/main_scene="res://Scene1.tscn"
+config/name="projectCI"
+run/main_scene="res://Title.tscn"
 
 [display]
 
 window/size/width=640
 window/size/height=360
-window/size/test_width=1280
+window/size/test_width=1024
 window/size/test_height=720
 
 [rendering]
