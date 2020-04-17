@@ -11,6 +11,7 @@ var dirup = 1
 var anim = "walk"
 var on_ground = true
 var is_dead = false
+var health = 75
 
 onready var time = OS.get_ticks_msec()
 onready var zombie = get_node("AnimatedSprite")
@@ -56,12 +57,3 @@ func _physics_process(delta):
 		elif dir < 0:
 			zombie.set_flip_h(true)
 		zombie.play(anim)
-	
-func _on_RottingZombie_body_entered(body):
-	if "Player" in body.name:
-		Global.player_hits += 1
-		if Global.player_hits == 4:
-			Global.headless_hits = 0
-			body.dead()
-			queue_free()
-	queue_free()

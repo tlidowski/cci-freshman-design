@@ -14,6 +14,7 @@ var velocity = Vector2()
 var anim = "idle"
 var on_ground = true
 var attacking = false
+var health = 25
 
 func _physics_process(delta):
 	#Movement (left, right, jump)
@@ -67,3 +68,5 @@ func _physics_process(delta):
 	elif velocity.x < 0:
 		sprite.set_flip_h(true)
 	sprite.play(anim)
+	
+	

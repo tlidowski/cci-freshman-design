@@ -18,10 +18,6 @@ _global_script_class_icons={
 config/name="projectCI"
 run/main_scene="res://Title.tscn"
 
-[autoload]
-
-Global="*res://Global.gd"
-
 [display]
 
 window/size/width=640

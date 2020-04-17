@@ -8,6 +8,8 @@ radius = 2.12204
 height = 8.90622
 
 [node name="Pewpew" type="Area2D"]
+collision_layer = 8
+collision_mask = 6
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

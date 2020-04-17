@@ -1,14 +1,10 @@
 extends Node
 
 func _ready():
-	pass # Replace with function body.
-
-
-
+	pass 
+	
 func _on_TextureButton_pressed():
-	get_tree().change_scene("res://Scene1.tscn")
-
-
+	get_tree().change_scene("res://Level0.tscn")
 
 func _on_TextureButton2_pressed():
 	get_tree().quit()
