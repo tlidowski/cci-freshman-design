@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 40
+const SPEED = 60
 const GRAVITY = 9.81
 const JUMP_POWER = -250
 const FLOOR = Vector2(0, -1)
@@ -50,10 +50,18 @@ func _physics_process(delta):
 		else:
 			on_ground = false
 	
-		#Switches direction of zombie depending on direction it's velocity is.
+		#Switches direction of zombie depending on direction its velocity is.
 		if dir > 0:
 			zombie.set_flip_h(false)
 		elif dir < 0:
 			zombie.set_flip_h(true)
 		zombie.play(anim)
 	
+func _on_HeadlessZombie_body_entered(body):
+	if "Player" in body.name:
+		Global.player_hits += 1
+		if Global.player_hits == 4:
+			Global.headless_hits = 0
+			body.dead()
+			queue_free()
+	queue_free()

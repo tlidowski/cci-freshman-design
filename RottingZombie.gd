@@ -57,3 +57,11 @@ func _physics_process(delta):
 			zombie.set_flip_h(true)
 		zombie.play(anim)
 	
+func _on_RottingZombie_body_entered(body):
+	if "Player" in body.name:
+		Global.player_hits += 1
+		if Global.player_hits == 4:
+			Global.headless_hits = 0
+			body.dead()
+			queue_free()
+	queue_free()

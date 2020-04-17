@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const SPEED = 50
+const SPEED = 30
 const GRAVITY = 9.81
 const JUMP_POWER = -250
 const FLOOR = Vector2(0, -1)
@@ -57,3 +57,11 @@ func _physics_process(delta):
 			zombie.set_flip_h(true)
 		zombie.play(anim)
 	
+func _on_GreenShortsZombie_body_entered(body):
+	if "Player" in body.name:
+		Global.player_hits += 1
+		if Global.player_hits == 4:
+			Global.headless_hits = 0
+			body.dead()
+			queue_free()
+	queue_free()

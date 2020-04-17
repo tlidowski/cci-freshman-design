@@ -15,9 +15,7 @@ var anim = "idle"
 var on_ground = true
 var attacking = false
 
-
-func _physics_process(_delta):
-	
+func _physics_process(delta):
 	#Movement (left, right, jump)
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
@@ -53,7 +51,6 @@ func _physics_process(_delta):
 		on_ground = false
 
 	velocity = move_and_slide(velocity, FLOOR)
-
 	#Sprite animation.
 	if velocity.x == 0:
 		if Input.is_action_pressed("ui_focus_next"):
@@ -70,4 +67,3 @@ func _physics_process(_delta):
 	elif velocity.x < 0:
 		sprite.set_flip_h(true)
 	sprite.play(anim)
-	
