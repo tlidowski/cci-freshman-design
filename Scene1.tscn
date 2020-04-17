@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=58 format=2]
 
 [ext_resource path="res://tileset1.2.tres" type="TileSet" id=1]
 [ext_resource path="res://Taiga-Asset-Pack_vnitti/PNG/Middleground.png" type="Texture" id=2]
@@ -15,6 +15,34 @@
 [ext_resource path="res://zombie.green/tile004.png" type="Texture" id=13]
 [ext_resource path="res://zombie.rotting/tile003.png" type="Texture" id=14]
 [ext_resource path="res://zombie.rotting/tile005.png" type="Texture" id=15]
+[ext_resource path="res://Popup.gd" type="Script" id=16]
+[ext_resource path="res://portal/frame_06_delay-0.13s.png" type="Texture" id=17]
+[ext_resource path="res://portal/frame_05_delay-0.12s.png" type="Texture" id=18]
+[ext_resource path="res://portal/frame_02_delay-0.13s.png" type="Texture" id=19]
+[ext_resource path="res://portal/frame_03_delay-0.12s.png" type="Texture" id=20]
+[ext_resource path="res://portal/frame_04_delay-0.13s.png" type="Texture" id=21]
+[ext_resource path="res://portal/frame_07_delay-0.12s.png" type="Texture" id=22]
+[ext_resource path="res://portal/frame_08_delay-0.13s.png" type="Texture" id=23]
+[ext_resource path="res://portal/frame_09_delay-0.12s.png" type="Texture" id=24]
+[ext_resource path="res://portal/frame_10_delay-0.13s.png" type="Texture" id=25]
+[ext_resource path="res://portal/frame_00_delay-0.13s.png" type="Texture" id=26]
+[ext_resource path="res://portal/frame_01_delay-0.12s.png" type="Texture" id=27]
+[ext_resource path="res://portal/frame_22_delay-0.13s.png" type="Texture" id=28]
+[ext_resource path="res://portal/frame_12_delay-0.13s.png" type="Texture" id=29]
+[ext_resource path="res://portal/frame_11_delay-0.12s.png" type="Texture" id=30]
+[ext_resource path="res://portal/frame_18_delay-0.13s.png" type="Texture" id=31]
+[ext_resource path="res://portal/frame_13_delay-0.12s.png" type="Texture" id=32]
+[ext_resource path="res://portal/frame_19_delay-0.12s.png" type="Texture" id=33]
+[ext_resource path="res://portal/frame_15_delay-0.12s.png" type="Texture" id=34]
+[ext_resource path="res://portal/frame_16_delay-0.13s.png" type="Texture" id=35]
+[ext_resource path="res://portal/frame_21_delay-0.12s.png" type="Texture" id=36]
+[ext_resource path="res://portal/frame_14_delay-0.13s.png" type="Texture" id=37]
+[ext_resource path="res://portal/frame_20_delay-0.13s.png" type="Texture" id=38]
+[ext_resource path="res://portal/frame_17_delay-0.12s.png" type="Texture" id=39]
+[ext_resource path="res://portal/frame_23_delay-0.12s.png" type="Texture" id=40]
+[ext_resource path="res://portal/frame_25_delay-0.12s.png" type="Texture" id=41]
+[ext_resource path="res://portal/frame_24_delay-0.13s.png" type="Texture" id=42]
+[ext_resource path="res://portal/frame_26_delay-0.12s.png" type="Texture" id=43]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.6082, 37.6681 )
@@ -37,10 +65,18 @@ extents = Vector2( 48.0998, 24.0593 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 32.1268, 16.1315 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 37 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 39 ), ExtResource( 31 ), ExtResource( 33 ), ExtResource( 38 ), ExtResource( 36 ), ExtResource( 28 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 41 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "animation",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 7.00003, 10.6182 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 13 ), ExtResource( 4 ) ],
 "loop": true,
@@ -48,10 +84,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 6, 11 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 5 ), ExtResource( 15 ) ],
 "loop": true,
@@ -59,10 +95,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 8.0004, 11 )
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
@@ -89,6 +125,7 @@ __meta__ = {
 }
 
 [node name="Floor" type="StaticBody2D" parent="Terrain"]
+collision_layer = 4
 
 [node name="TileMap" type="TileMap" parent="Terrain/Floor"]
 position = Vector2( 0, 2 )
@@ -106,6 +143,7 @@ position = Vector2( 319.845, 338.74 )
 shape = SubResource( 2 )
 
 [node name="Wall" type="StaticBody2D" parent="Terrain"]
+collision_layer = 4
 
 [node name="TileMap" type="TileMap" parent="Terrain/Wall"]
 tile_set = ExtResource( 1 )
@@ -120,6 +158,7 @@ shape = SubResource( 3 )
 
 [node name="Wall2" type="StaticBody2D" parent="Terrain"]
 position = Vector2( -656.001, -1 )
+collision_layer = 4
 
 [node name="TileMap" type="TileMap" parent="Terrain/Wall2"]
 tile_set = ExtResource( 1 )
@@ -134,6 +173,7 @@ shape = SubResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Terrain"]
 position = Vector2( 21.4221, -25.5743 )
+collision_layer = 4
 
 [node name="TileMap" type="TileMap" parent="Terrain/StaticBody2D"]
 tile_set = ExtResource( 1 )
@@ -176,34 +216,78 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 1179651, 26, 0, 1179659, 27, 0, 1179665, 27, 0, 1179673, 28, 0, 1179678, 27, 0, 1179683, 30, 0, 1179686, 27, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -167.788, 194.659 )
+[node name="Portal" type="AnimatedSprite" parent="."]
+position = Vector2( 564.575, 260.062 )
+scale = Vector2( 0.253647, 0.336575 )
+frames = SubResource( 8 )
+animation = "animation"
+frame = 6
+playing = true
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 298.155, -115.663 )
-offset = Vector2( 0, -60 )
-current = true
-zoom = Vector2( 0.6, 0.65 )
-limit_left = 0
-limit_top = 0
-limit_right = 640
-limit_bottom = 640
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="Popup" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Popup"]
+margin_left = 6.94758
+margin_top = 282.155
+margin_right = 164.948
+margin_bottom = 296.155
+rect_scale = Vector2( 0.612936, 0.775619 )
+text = "Use arrow keys to move."
+
+[node name="Label2" type="Label" parent="Control/Popup"]
+margin_left = 95.7983
+margin_top = 250.872
+margin_right = 239.798
+margin_bottom = 264.872
+rect_scale = Vector2( 0.668126, 0.770921 )
+text = "Press SPACE to jump."
+
+[node name="Label3" type="Label" parent="Control/Popup"]
+margin_left = 177.826
+margin_top = 220.935
+margin_right = 304.826
+margin_bottom = 234.935
+rect_scale = Vector2( 0.722935, 0.672077 )
+text = "Press TAB to attack."
+
+[node name="Label4" type="Label" parent="Control/Popup"]
+margin_left = 384.123
+margin_top = 256.745
+margin_right = 575.123
+margin_bottom = 270.745
+rect_scale = Vector2( 0.74899, 0.881002 )
+text = "Press UP to go through portal."
 
 [node name="Zombies" type="Node2D" parent="."]
 position = Vector2( -91.6831, -10.2412 )
 
 [node name="GreenShortsZombie" type="KinematicBody2D" parent="Zombies"]
 position = Vector2( 50.7183, 0.975342 )
+collision_layer = 2
+collision_mask = 4
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/GreenShortsZombie"]
 position = Vector2( 503.802, 116.476 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/GreenShortsZombie"]
 position = Vector2( 503.286, 113.993 )
 scale = Vector2( 0.569042, 0.463595 )
-frames = SubResource( 9 )
+frames = SubResource( 10 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/GreenShortsZombie/AnimatedSprite"]
@@ -214,16 +298,18 @@ cast_to = Vector2( 0, 15 )
 
 [node name="GreenShortsZombie2" type="KinematicBody2D" parent="Zombies"]
 position = Vector2( 114.604, 1.52588e-05 )
+collision_layer = 2
+collision_mask = 4
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/GreenShortsZombie2"]
 position = Vector2( 503.802, 116.476 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/GreenShortsZombie2"]
 position = Vector2( 503.286, 113.993 )
 scale = Vector2( 0.569042, 0.463595 )
-frames = SubResource( 9 )
+frames = SubResource( 10 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/GreenShortsZombie2/AnimatedSprite"]
@@ -234,16 +320,18 @@ cast_to = Vector2( 0, 15 )
 
 [node name="RottingZombie" type="KinematicBody2D" parent="Zombies"]
 position = Vector2( 90.7078, -0.487671 )
+collision_layer = 2
+collision_mask = 4
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/RottingZombie"]
 position = Vector2( 86.8024, 69.4762 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/RottingZombie"]
 position = Vector2( 85.7026, 67.5208 )
 scale = Vector2( 0.507958, 0.403484 )
-frames = SubResource( 11 )
+frames = SubResource( 12 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/RottingZombie/AnimatedSprite"]
@@ -254,16 +342,18 @@ cast_to = Vector2( 0, 15 )
 
 [node name="RottingZombie2" type="KinematicBody2D" parent="Zombies"]
 position = Vector2( 114.116, 0 )
+collision_layer = 2
+collision_mask = 4
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/RottingZombie2"]
 position = Vector2( 86.8024, 69.4762 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/RottingZombie2"]
 position = Vector2( 85.7026, 67.5208 )
 scale = Vector2( 0.507958, 0.403484 )
-frames = SubResource( 11 )
+frames = SubResource( 12 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/RottingZombie2/AnimatedSprite"]
@@ -274,16 +364,18 @@ cast_to = Vector2( 0, 15 )
 
 [node name="HeadlessZombie" type="KinematicBody2D" parent="Zombies"]
 position = Vector2( 180.44, 155.081 )
+collision_layer = 2
+collision_mask = 4
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/HeadlessZombie"]
 position = Vector2( 205.802, 101.476 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/HeadlessZombie"]
 position = Vector2( 205.081, 94.2562 )
 scale = Vector2( 0.669904, 0.58738 )
-frames = SubResource( 13 )
+frames = SubResource( 14 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/HeadlessZombie/AnimatedSprite"]
@@ -294,16 +386,18 @@ cast_to = Vector2( 0, 13 )
 
 [node name="HeadlessZombie2" type="KinematicBody2D" parent="Zombies"]
 position = Vector2( 362.422, 204.689 )
+collision_layer = 2
+collision_mask = 4
 script = ExtResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zombies/HeadlessZombie2"]
 position = Vector2( 205.802, 101.476 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Zombies/HeadlessZombie2"]
 position = Vector2( 205.081, 94.2562 )
 scale = Vector2( 0.669904, 0.58738 )
-frames = SubResource( 13 )
+frames = SubResource( 14 )
 animation = "walk"
 
 [node name="RayCast2D" type="RayCast2D" parent="Zombies/HeadlessZombie2/AnimatedSprite"]
@@ -311,3 +405,17 @@ position = Vector2( 214.802, 104.476 )
 scale = Vector2( 0.8125, 0.59375 )
 enabled = true
 cast_to = Vector2( 0, 13 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -94.8113, 164.141 )
+collision_mask = 4
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 298.155, -115.663 )
+offset = Vector2( 0, -60 )
+current = true
+zoom = Vector2( 0.6, 0.65 )
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 640
