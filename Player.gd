@@ -29,23 +29,23 @@ func _physics_process(_delta):
 			$Position2D.position.x *= -1
 	else:
 		velocity.x = 0
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_key_pressed(KEY_SPACE):
 		if on_ground == true:
 			velocity.y = JUMP_POWER
 			on_ground = false
 			
-	#Player attack.
+	# Player attack.
 	if Input.is_action_just_pressed("ui_focus_next"): #Press TAB to attack.
 		#Creates the bullet when TAB is pressed.
 		var bullet = BULLET.instance()
 		if sign($Position2D.position.x) > 0:
-			bullet.set_bullet_direction(1)
+			bullet.set_bullet_direction(1) #If player is facing right, shoot bullet right.
 		else:
-			bullet.set_bullet_direction(-1)
+			bullet.set_bullet_direction(-1) #If player is facing left, shoot bullet left.
 		get_parent().add_child(bullet)
-		bullet.position = $Position2D.global_position
+		bullet.position = $Position2D.global_position #Bullet emerges from the position of player's gun.
 	
-	#GRAVITY! No double jumping!
+	# GRAVITY! No double jumping!
 	velocity.y +=  GRAVITY
 	if is_on_floor():
 		on_ground = true
@@ -56,7 +56,7 @@ func _physics_process(_delta):
 
 	#Sprite animation.
 	if velocity.x == 0:
-		if Input.is_action_pressed("ui_focus_next"):
+		if Input.is_action_pressed("ui_focus_next"): # Press TAB.
 			anim = "attack"
 		else:
 			anim = "idle"
@@ -70,4 +70,3 @@ func _physics_process(_delta):
 	elif velocity.x < 0:
 		sprite.set_flip_h(true)
 	sprite.play(anim)
-	

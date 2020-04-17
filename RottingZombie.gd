@@ -30,11 +30,11 @@ func _physics_process(delta):
 		var switchingvel = switchvel.randi_range(1, 100)
 		
 		#Randomized movement. 
-		if switchingvel == 1:
+		if switchingvel == 1: #If number randomed is 1, move right.
 			dir = 1
-		elif switchingvel == 100:
+		elif switchingvel == 100: #If number randomed is 100, move left.
 			dir = -1
-		elif switchingvel == 50:
+		elif switchingvel == 50: #If number randomed is 50, jump.
 			if on_ground == true:
 				velocity.y = JUMP_POWER
 				on_ground = false
