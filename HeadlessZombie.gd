@@ -5,6 +5,7 @@ const GRAVITY = 9.81
 const JUMP_POWER = -250
 const FLOOR = Vector2(0, -1)
 const damage = 3
+const GEM = preload("res://Gem.tscn")
 
 var velocity = Vector2(0, 0)
 var dir = 1

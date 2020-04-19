@@ -1,6 +1,7 @@
 extends Area2D
 
 const SPEED = 200
+const GEM = preload("res://Gem.tscn")
 
 var velocity = Vector2()
 var direction = 1
@@ -24,4 +25,6 @@ func _on_Pewpew_body_entered(body):
 		body.health -= damage
 		if body.health <= 0:
 			body.dead()
+			var gem = GEM.instance()
+			gem.set_position(body.get_position())
 	queue_free()
