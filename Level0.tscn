@@ -244,7 +244,7 @@ position = Vector2( 564.575, 260.062 )
 scale = Vector2( 0.253647, 0.336575 )
 frames = SubResource( 8 )
 animation = "animation"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Control" type="Control" parent="."]
