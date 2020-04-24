@@ -16,8 +16,15 @@ var anim = "idle"
 var on_ground = true
 var attacking = false
 var health = 25
+var is_dead = false
 
+func dead():
+	is_dead = true
+	queue_free()
+	
+	
 func _physics_process(delta):
+	
 	#Movement (left, right, jump)
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED

@@ -4,7 +4,12 @@ const SPEED = 40
 const GRAVITY = 9.81
 const JUMP_POWER = -250
 const FLOOR = Vector2(0, -1)
+<<<<<<< HEAD
 
+=======
+const damage = 3
+const GEM = preload("res://Gem.tscn")
+>>>>>>> 754be0b2009d085ea5eed298561304303b081e84
 
 var velocity = Vector2(0, 0)
 var dir = 1

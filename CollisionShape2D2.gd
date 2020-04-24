@@ -1,4 +1,4 @@
-extends ProgressBar
+extends CollisionShape2D
 
 
 # Declare member variables here. Examples:
