@@ -3,6 +3,7 @@
 extends KinematicBody2D
 
 onready var sprite = get_node("AnimatedSprite")
+onready var hpbar = get_node("HealthBar")
 
 const SPEED = 100
 const GRAVITY = 9.81
@@ -28,7 +29,7 @@ func _physics_process(delta):
 			$Position2D.position.x *= -1
 	else:
 		velocity.x = 0
-	if Input.is_key_pressed(KEY_SPACE):
+	if Input.is_action_pressed("ui_up"):
 		if on_ground == true:
 			velocity.y = JUMP_POWER
 			on_ground = false
@@ -68,5 +69,13 @@ func _physics_process(delta):
 	elif velocity.x < 0:
 		sprite.set_flip_h(true)
 	sprite.play(anim)
+
 	
-	
+func _on_PlayerArea2D_area_entered(area):
+	if health <= 0:
+		get_tree().reload_current_scene()
+	else:
+		if "Zombie" in area.name:
+			health += area.damage
+			hpbar.set_value(health)
+

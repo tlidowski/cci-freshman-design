@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-const SPEED = 30
+const SPEED = 50
 const GRAVITY = 9.81
 const JUMP_POWER = -250
 const FLOOR = Vector2(0, -1)
-const damage = 5
+
 
 var velocity = Vector2(0, 0)
 var dir = 1
@@ -12,11 +12,11 @@ var dirup = 1
 var anim = "walk"
 var on_ground = true
 var is_dead = false
-var health = 100
+var health = 50
 
 onready var time = OS.get_ticks_msec()
 onready var zombie = get_node("AnimatedSprite")
-
+onready var hpbar = get_node("HealthBar")
 
 #When function is called, all movement ceases and zombie is destroyed.
 func dead():
@@ -60,3 +60,4 @@ func _physics_process(delta):
 			zombie.set_flip_h(true)
 		zombie.play(anim)
 			
+		hpbar.set_value(health)

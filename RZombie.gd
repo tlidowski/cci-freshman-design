@@ -1,10 +1,9 @@
-extends KinematicBody2D
+extends Area2D
 
-const SPEED = 40
+const SPEED = 30
 const GRAVITY = 9.81
 const JUMP_POWER = -250
 const FLOOR = Vector2(0, -1)
-
 
 var velocity = Vector2(0, 0)
 var dir = 1
@@ -12,11 +11,10 @@ var dirup = 1
 var anim = "walk"
 var on_ground = true
 var is_dead = false
-var health = 40
+var health = 75
 
 onready var time = OS.get_ticks_msec()
 onready var zombie = get_node("AnimatedSprite")
-onready var hpbar = get_node("HealthBar3")
 
 #When function is called, all movement ceases and zombie is destroyed.
 func dead():
@@ -36,7 +34,7 @@ func _physics_process(delta):
 		if switchingvel == 1: #If number randomed is 1, move right.
 			dir = 1
 		elif switchingvel == 100: #If number randomed is 100, move left.
-			dir = -1 
+			dir = -1
 		elif switchingvel == 50: #If number randomed is 50, jump.
 			if on_ground == true:
 				velocity.y = JUMP_POWER
@@ -53,11 +51,9 @@ func _physics_process(delta):
 		else:
 			on_ground = false
 	
-		#Switches direction of zombie depending on direction its velocity is.
+		#Switches direction of zombie depending on direction it's velocity is.
 		if dir > 0:
 			zombie.set_flip_h(false)
 		elif dir < 0:
 			zombie.set_flip_h(true)
 		zombie.play(anim)
-
-		hpbar.set_value(health)

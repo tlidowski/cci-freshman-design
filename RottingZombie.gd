@@ -11,10 +11,11 @@ var dirup = 1
 var anim = "walk"
 var on_ground = true
 var is_dead = false
-var health = 75
+var health = 30
 
 onready var time = OS.get_ticks_msec()
 onready var zombie = get_node("AnimatedSprite")
+onready var hpbar = get_node("HealthBar2")
 
 #When function is called, all movement ceases and zombie is destroyed.
 func dead():
@@ -57,3 +58,5 @@ func _physics_process(delta):
 		elif dir < 0:
 			zombie.set_flip_h(true)
 		zombie.play(anim)
+
+		hpbar.set_value(health)
