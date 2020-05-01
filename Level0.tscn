@@ -244,7 +244,7 @@ position = Vector2( 564.575, 260.062 )
 scale = Vector2( 0.253647, 0.336575 )
 frames = SubResource( 8 )
 animation = "animation"
-frame = 2
+frame = 4
 playing = true
 
 [node name="Control" type="Control" parent="."]
@@ -255,6 +255,7 @@ __meta__ = {
 }
 
 [node name="Popup" type="Popup" parent="Control"]
+visible = true
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 41 )
@@ -347,6 +348,9 @@ script = ExtResource( 45 )
 position = Vector2( -0.0689392, -1.73982 )
 shape = SubResource( 10 )
 
+[node name="Position2D" type="Position2D" parent="Zombies/GreenShortsZombie"]
+position = Vector2( 588.668, 124.864 )
+
 [node name="RottingZombie" type="KinematicBody2D" parent="Zombies"]
 position = Vector2( 90.7078, -0.487671 )
 collision_layer = 2
@@ -396,6 +400,9 @@ script = ExtResource( 46 )
 position = Vector2( 86.8024, 69.4762 )
 shape = SubResource( 12 )
 
+[node name="Position2D" type="Position2D" parent="Zombies/RottingZombie"]
+position = Vector2( 168.378, 79.5688 )
+
 [node name="HeadlessZombie" type="KinematicBody2D" parent="Zombies"]
 position = Vector2( 180.44, 155.081 )
 collision_layer = 2
@@ -444,6 +451,9 @@ script = ExtResource( 44 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Zombies/HeadlessZombie/HZombieArea2D"]
 position = Vector2( 205.802, 103.476 )
 shape = SubResource( 14 )
+
+[node name="Position2D" type="Position2D" parent="Zombies/HeadlessZombie"]
+position = Vector2( 292.608, 110.37 )
 
 [node name="Player" parent="." instance=ExtResource( 39 )]
 position = Vector2( -149.48, 228.539 )
