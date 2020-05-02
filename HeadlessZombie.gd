@@ -4,6 +4,7 @@ const SPEED = 40
 const GRAVITY = 9.81
 const JUMP_POWER = -250
 const FLOOR = Vector2(0, -1)
+const GEM = preload("res://gem.tscn")
 
 
 var velocity = Vector2(0, 0)
@@ -21,6 +22,9 @@ onready var hpbar = get_node("HealthBar3")
 #When function is called, all movement ceases and zombie is destroyed.
 func dead():
 	is_dead = true
+	var gem = GEM.instance()
+	get_parent().add_child(gem)
+	gem.position = $Position2D.global_position
 	queue_free()
 
 func _physics_process(delta):
