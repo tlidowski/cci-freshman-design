@@ -18,6 +18,13 @@ _global_script_class_icons={
 config/name="projectCI"
 run/main_scene="res://Level0.tscn"
 
+[autoload]
+
+GlobalVars="*res://GlobalVars.gd"
+CL="*res://CanvasLayer.tscn"
+CanvasScript="*res://CanvasScript.gd"
+ScoreLabel="*res://ScoreLabel.gd"
+
 [display]
 
 window/size/width=640

@@ -24,4 +24,5 @@ func _on_Pewpew_body_entered(body):
 		body.health -= damage
 		if body.health <= 0:
 			body.dead()
+			GlobalVars.addkill()
 	queue_free()
