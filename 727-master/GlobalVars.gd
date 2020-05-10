@@ -7,10 +7,12 @@ var zombie_hits = 0
 var gem_count = 0
 var zombie_kills = 0
 var orbs = 0
+var bubbles = 0
 
 signal mysignal()
 signal zombiesignal()
 signal orbsignal()
+signal bubblesignal()
 
 func addgem():
 	self.gem_count += 1
@@ -23,3 +25,7 @@ func addkill():
 func addorb():
 	self.orbs += 1
 	emit_signal("orbsignal")
+
+func addbubble():
+	self.bubbles += 1
+	emit_signal("bubblesignal")

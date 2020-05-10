@@ -75,9 +75,11 @@ func _on_PlayerArea2D_area_entered(area):
 		get_tree().reload_current_scene()
 	else:
 		if "Zombie" in area.name:
-			health += area.damage
+			health += area.damage - GlobalVars.bubbles
 			hpbar.set_value(health)
 		if "orb" in area.name:
+			area.queue_free()
+		if "bubble" in area.name:
 			area.queue_free()
 # Replace with function body.
  # Replace with function body.
