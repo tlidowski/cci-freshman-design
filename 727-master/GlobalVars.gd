@@ -1,31 +1,25 @@
 extends Node
 
-var rotting_hits = 0
-var green_hits = 0
-var headless_hits = 0
-var zombie_hits = 0
 var gem_count = 0
 var zombie_kills = 0
-var orbs = 0
+var orb = 0
 var bubbles = 0
 
-signal mysignal()
+signal gemsignal()
 signal zombiesignal()
 signal orbsignal()
 signal bubblesignal()
 
 func addgem():
 	self.gem_count += 1
-	emit_signal("mysignal")
+	emit_signal("gemsignal")
 
 func addkill():
 	self.zombie_kills += 1
 	emit_signal("zombiesignal")
 	
-func addorb():
-	self.orbs += 1
+func orbobtained():
 	emit_signal("orbsignal")
 
-func addbubble():
-	self.bubbles += 1
+func bubbleobtained():
 	emit_signal("bubblesignal")

@@ -21,7 +21,7 @@
 [ext_resource path="res://player.pale.red/tile044.png" type="Texture" id=36]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 14.9146
+radius = 9.3522
 height = 11.6342
 
 [sub_resource type="SpriteFrames" id=2]
@@ -50,6 +50,7 @@ animations = [ {
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 1.80988, 0.789047 )
 scale = Vector2( 0.519148, 0.557174 )
+collision_mask = 17
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
@@ -59,10 +60,13 @@ __meta__ = {
 position = Vector2( 393.813, -71.4647 )
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Player" type="Area2D" parent="."]
+position = Vector2( -1.92623, 0 )
+collision_layer = 80
+collision_mask = 112
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 393.813, -71.4647 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 394.126, -69.7264 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -72,6 +76,4 @@ animation = "damage"
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 25, -400 )
-
-[node name="Invulnerbility_Timer" type="Timer" parent="."]
-wait_time = 8.0
+[connection signal="area_entered" from="Player" to="." method="_on_Player_area_entered"]

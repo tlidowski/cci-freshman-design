@@ -5,15 +5,15 @@
 [ext_resource path="res://bubble.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 27.9197
+radius = 7.86603
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 29.5607
+radius = 7.80777
 
 [node name="bubble" type="Area2D"]
-position = Vector2( 0.17746, -0.247986 )
-collision_layer = 16
-collision_mask = 0
+position = Vector2( 16.5639, 3.53354 )
+collision_layer = 64
+collision_mask = 16
 script = ExtResource( 3 )
 
 [node name="bubblegravity" type="KinematicBody2D" parent="."]
@@ -32,4 +32,4 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.151031, 0.0285873 )
 shape = SubResource( 2 )
-[connection signal="area_entered" from="." to="." method="_on_Gem_area_entered"]
+[connection signal="area_entered" from="." to="." method="_on_bubble_area_entered"]

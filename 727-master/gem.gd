@@ -1,5 +1,6 @@
+extends Area2D
 
-		
-
-
- # Replace with function body.
+func _on_Gem_area_entered(area):
+	if "Player" in area.name:
+		GlobalVars.addgem()
+		queue_free()

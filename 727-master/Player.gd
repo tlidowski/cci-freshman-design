@@ -70,16 +70,14 @@ func _physics_process(delta):
 		sprite.set_flip_h(true)
 	sprite.play(anim)
 
-func _on_PlayerArea2D_area_entered(area):
+func _on_Player_area_entered(area):
 	if health <= 0:
 		get_tree().reload_current_scene()
 	else:
 		if "Zombie" in area.name:
-			health += area.damage - GlobalVars.bubbles
+			health += area.damage - (GlobalVars.bubbles * 10)
 			hpbar.set_value(health)
 		if "orb" in area.name:
 			area.queue_free()
 		if "bubble" in area.name:
 			area.queue_free()
-# Replace with function body.
- # Replace with function body.
