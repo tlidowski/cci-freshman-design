@@ -21,7 +21,7 @@ func _physics_process(delta):
 #If bullet touches zombie, dead() function is called and bullet is destroyed.
 func _on_Pewpew_body_entered(body):
 	if "Zombie" in body.name:
-		body.health -= damage
+		body.health -= damage + GlobalVars.orbs
 		if body.health <= 0:
 			body.dead()
 			GlobalVars.addkill()

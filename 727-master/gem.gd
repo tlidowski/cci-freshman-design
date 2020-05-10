@@ -6,3 +6,5 @@ func _on_Gem_area_entered(area):
 		queue_free()
 		
 
+
+ # Replace with function body.

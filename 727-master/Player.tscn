@@ -21,7 +21,7 @@
 [ext_resource path="res://player.pale.red/tile044.png" type="Texture" id=36]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 8.71976
+radius = 14.9146
 height = 11.6342
 
 [sub_resource type="SpriteFrames" id=2]
@@ -29,6 +29,11 @@ animations = [ {
 "frames": [ ExtResource( 10 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "damage",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 20 ), ExtResource( 25 ), ExtResource( 31 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 24 ) ],
@@ -39,11 +44,6 @@ animations = [ {
 "frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 8 ), ExtResource( 36 ) ],
 "loop": true,
 "name": "attack",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "damage",
 "speed": 5.0
 } ]
 
@@ -75,4 +75,3 @@ position = Vector2( 25, -400 )
 
 [node name="Invulnerbility_Timer" type="Timer" parent="."]
 wait_time = 8.0
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

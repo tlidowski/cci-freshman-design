@@ -24,6 +24,7 @@ GlobalVars="*res://GlobalVars.gd"
 CL="*res://CanvasLayer.tscn"
 CanvasScript="*res://CanvasScript.gd"
 ScoreLabel="*res://ScoreLabel.gd"
+orb="*res://orb.tscn"
 
 [display]
 

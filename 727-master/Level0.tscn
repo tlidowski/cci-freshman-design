@@ -122,7 +122,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=17]
-radius = 8.23196
+radius = 9.84963
 height = 10.6925
 
 [sub_resource type="StyleBoxFlat" id=18]
@@ -252,7 +252,7 @@ position = Vector2( 564.575, 260.062 )
 scale = Vector2( 0.253647, 0.336575 )
 frames = SubResource( 8 )
 animation = "animation"
-frame = 15
+frame = 17
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -311,6 +311,9 @@ text = "Press SPACE  to go through portal."
 margin_right = 40.0
 margin_bottom = 14.0
 script = ExtResource( 48 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Zombies" type="Node2D" parent="."]
 position = Vector2( -89.4079, -9.1036 )
@@ -366,7 +369,7 @@ position = Vector2( -0.0689392, -1.73982 )
 shape = SubResource( 11 )
 
 [node name="Position2D" type="Position2D" parent="Zombies/GreenShortsZombie"]
-position = Vector2( 588.668, 124.864 )
+position = Vector2( 505.507, 116.651 )
 
 [node name="RottingZombie" type="KinematicBody2D" parent="Zombies"]
 position = Vector2( 90.7078, -0.487671 )
@@ -418,7 +421,7 @@ position = Vector2( 86.8024, 69.4762 )
 shape = SubResource( 13 )
 
 [node name="Position2D" type="Position2D" parent="Zombies/RottingZombie"]
-position = Vector2( 168.378, 79.5688 )
+position = Vector2( 87.2699, 70.842 )
 
 [node name="HeadlessZombie" type="KinematicBody2D" parent="Zombies"]
 position = Vector2( 180.44, 155.081 )
@@ -470,10 +473,10 @@ position = Vector2( 205.802, 103.476 )
 shape = SubResource( 15 )
 
 [node name="Position2D" type="Position2D" parent="Zombies/HeadlessZombie"]
-position = Vector2( 292.608, 110.37 )
+position = Vector2( 205.34, 104.21 )
 
 [node name="Player" parent="." instance=ExtResource( 39 )]
-position = Vector2( -149.48, 228.539 )
+position = Vector2( -148.967, 228.539 )
 collision_mask = 4
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

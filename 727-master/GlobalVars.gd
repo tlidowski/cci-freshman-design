@@ -10,10 +10,10 @@ var orbs = 0
 
 signal mysignal()
 signal zombiesignal()
+signal orbsignal()
 
 func addgem():
 	self.gem_count += 1
-	print(self.gem_count)
 	emit_signal("mysignal")
 
 func addkill():

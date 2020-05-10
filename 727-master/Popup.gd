@@ -1,4 +1,4 @@
 extends Popup
 
 func _ready():
-	popup()
+	call_deferred("popup")

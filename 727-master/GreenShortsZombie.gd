@@ -5,7 +5,7 @@ const GRAVITY = 9.81
 const JUMP_POWER = -250
 const FLOOR = Vector2(0, -1)
 const GEM = preload("res://gem.tscn")
-
+const ORB = preload("res://orb.tscn")
 
 var velocity = Vector2(0, 0)
 var dir = 1
@@ -24,12 +24,22 @@ onready var hpbar = get_node("HealthBar")
 func dead():
 	is_dead = true
 	var gem = GEM.instance()
-	get_parent().add_child(gem)
+	get_parent().call_deferred("add_child",gem)
 	gem.position = $Position2D.global_position
 	queue_free()
 
 func _physics_process(delta):
 	if is_dead == false:
+		var orbval = RandomNumberGenerator.new()
+		orbval.randomize()
+		var orbspawn = orbval.randi_range(1, 500)
+		if orbspawn == 100:
+			var orb = ORB.instance()
+			get_parent().add_child(orb)
+			var coordinate = RandomNumberGenerator.new()
+			coordinate.randomize()
+			orb.global_position.x = $Position2D.global_position.x + coordinate.randi_range(-300, 300)
+			orb.global_position.y = $Position2D.global_position.y
 		velocity.x = SPEED * dir
 		velocity.y += GRAVITY
 		velocity = move_and_slide(velocity, FLOOR)
