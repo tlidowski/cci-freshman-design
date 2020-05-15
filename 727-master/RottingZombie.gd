@@ -5,6 +5,8 @@ const GRAVITY = 9.81
 const JUMP_POWER = -250
 const FLOOR = Vector2(0, -1)
 const GEM = preload("res://gem.tscn")
+const ORB = preload("res://Orb.tscn")
+const BUBBLE = preload("res://bubble.tscn")
 
 var velocity = Vector2(0, 0)
 var dir = 1
@@ -17,6 +19,7 @@ var health = 30
 onready var time = OS.get_ticks_msec()
 onready var zombie = get_node("AnimatedSprite")
 onready var hpbar = get_node("HealthBar2")
+
 
 #When function is called, all movement ceases and zombie is destroyed.
 func dead():
@@ -44,7 +47,24 @@ func _physics_process(delta):
 			if on_ground == true:
 				velocity.y = JUMP_POWER
 				on_ground = false
-				
+		
+		var spawn = RandomNumberGenerator.new()
+		spawn.randomize()
+		var spawnitem = spawn.randi_range(1, 500)
+		if spawnitem == 100:
+			var orb = ORB.instance()
+			get_parent().add_child(orb)
+			var posadd = RandomNumberGenerator.new()
+			posadd.randomize()
+			var posadded = posadd.randi_range(1, 300)
+			orb.position.x = self.position.x + posadded
+		elif spawnitem == 200:
+			var bubble = BUBBLE.instance()
+			get_parent().add_child(bubble)
+			var posadd = RandomNumberGenerator.new()
+			posadd.randomize()
+			var posadded = posadd.randi_range(1, 300)
+			orb.position.x = self.position.x + posadded
 		#If touching a wall, go the other direction.
 		if is_on_wall():
 			dir *= -1

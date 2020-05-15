@@ -66,7 +66,7 @@ animations = [ {
 [sub_resource type="CapsuleShape2D" id=9]
 radius = 25.8024
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=10]
 bg_color = Color( 0.0901961, 0.529412, 0.0784314, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -193,7 +193,7 @@ position = Vector2( 564.575, 260.062 )
 scale = Vector2( 0.253647, 0.336575 )
 frames = SubResource( 8 )
 animation = "animation"
-frame = 16
+frame = 12
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -286,7 +286,7 @@ margin_left = 349.296
 margin_top = -111.124
 margin_right = 445.296
 margin_bottom = -91.1241
-custom_styles/fg = SubResource( 18 )
+custom_styles/fg = SubResource( 10 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 max_value = 25.0
 step = 1.0
