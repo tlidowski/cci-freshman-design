@@ -19,7 +19,9 @@ func addkill():
 	emit_signal("zombiesignal")
 	
 func orbobtained():
+	self.orb += 1
 	emit_signal("orbsignal")
 
 func bubbleobtained():
+	self.bubbles += 1
 	emit_signal("bubblesignal")

@@ -75,9 +75,9 @@ func _on_Player_area_entered(area):
 		get_tree().reload_current_scene()
 	else:
 		if "Zombie" in area.name:
-			health += area.damage - (GlobalVars.bubbles * 10)
+			health += area.damage
 			hpbar.set_value(health)
-		if "orb" in area.name:
-			area.queue_free()
 		if "bubble" in area.name:
-			area.queue_free()
+			health += (GlobalVars.bubbles * 3)
+			hpbar.set_value(health)
+
