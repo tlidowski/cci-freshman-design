@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://RZombieArea2D.gd" type="Script" id=1]
+[ext_resource path="res://RottingZombie.gd" type="Script" id=2]
+[ext_resource path="res://zombie.rotting/tile003.png" type="Texture" id=3]
+[ext_resource path="res://zombie.rotting/tile004.png" type="Texture" id=4]
+[ext_resource path="res://zombie.rotting/tile005.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.423529, 0.0431373, 0.0431373, 1 )
+corner_detail = 12
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 4.08745
+height = 10.363
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[node name="RZ" type="Node2D"]
+
+[node name="RottingZombie" type="KinematicBody2D" parent="."]
+position = Vector2( 90.7078, -0.487671 )
+collision_layer = 2
+collision_mask = 12
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="HealthBar2" type="ProgressBar" parent="RottingZombie"]
+margin_left = 67.8704
+margin_top = 51.1851
+margin_right = 109.87
+margin_bottom = 58.1851
+custom_styles/fg = SubResource( 1 )
+max_value = 30.0
+step = 1.0
+value = 30.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RottingZombie"]
+position = Vector2( 86.8024, 69.4762 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="RottingZombie"]
+position = Vector2( 85.7026, 67.5208 )
+scale = Vector2( 0.507958, 0.403484 )
+frames = SubResource( 3 )
+animation = "walk"
+
+[node name="RayCast2D" type="RayCast2D" parent="RottingZombie/AnimatedSprite"]
+position = Vector2( 91.8656, 71.8504 )
+scale = Vector2( 0.518062, 0.446761 )
+enabled = true
+cast_to = Vector2( 0, 15 )
+
+[node name="RZombieArea2D" type="Area2D" parent="RottingZombie"]
+collision_layer = 16
+collision_mask = 32
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RottingZombie/RZombieArea2D"]
+position = Vector2( 86.8024, 69.4762 )
+shape = SubResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="RottingZombie"]
+position = Vector2( 87.7419, 72.2383 )
