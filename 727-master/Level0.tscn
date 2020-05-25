@@ -195,7 +195,7 @@ position = Vector2( 564.575, 260.062 )
 scale = Vector2( 0.253647, 0.336575 )
 frames = SubResource( 8 )
 animation = "animation"
-frame = 19
+frame = 25
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -252,6 +252,9 @@ margin_right = 575.123
 margin_bottom = 270.745
 rect_scale = Vector2( 0.74899, 0.881002 )
 text = "Press SPACE  to go through portal."
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Zombies" type="Node2D" parent="."]
 script = ExtResource( 5 )
