@@ -12,7 +12,7 @@ var dirup = 1
 var anim = "walk"
 var on_ground = true
 var is_dead = false
-var health = 30
+var health = 50
 
 onready var time = OS.get_ticks_msec()
 onready var zombie = get_node("AnimatedSprite")

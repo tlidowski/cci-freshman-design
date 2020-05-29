@@ -32,12 +32,12 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_up"):
 		if on_ground == true:
 			velocity.y = JUMP_POWER
-			on_ground = false
-			
+			on_ground = false	
 	# Player attack.
 	if Input.is_action_just_pressed("ui_focus_next"): #Press TAB to attack.
 		#Creates the bullet when TAB is pressed.
 		var bullet = BULLET.instance()
+		bullet.set_bullet_damage(GlobalVars.orb)
 		if sign($Position2D.position.x) > 0:
 			bullet.set_bullet_direction(1) #If player is facing right, shoot bullet right.
 		else:
@@ -80,4 +80,5 @@ func _on_Player_area_entered(area):
 		if "bubble" in area.name:
 			health += (GlobalVars.bubbles * 3)
 			hpbar.set_value(health)
+			
 

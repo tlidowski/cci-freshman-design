@@ -6,8 +6,8 @@ const BUBBLE = preload("res://bubble.tscn")
 func _physics_process(delta):
 	var spawn = RandomNumberGenerator.new()
 	spawn.randomize()
-	var spawnitem = spawn.randi_range(1, 1000)
-	if spawnitem == 300 or spawnitem == 600 or spawnitem == 900:
+	var spawnitem = spawn.randi_range(1, 5000)
+	if spawnitem == 4148 or spawnitem == 1219 or spawnitem == 1131:
 		var orb = ORB.instance()
 		get_parent().add_child(orb)
 		var posadd = RandomNumberGenerator.new()
@@ -16,7 +16,7 @@ func _physics_process(delta):
 		orb.position.x = self.position.x + posadded
 		posadded = posadd.randi_range(60, 300)
 		orb.position.y = self.position.y + posadded
-	elif spawnitem == 500:
+	elif spawnitem == 3060:
 		var bubble = BUBBLE.instance()
 		get_parent().add_child(bubble)
 		var posadd = RandomNumberGenerator.new()

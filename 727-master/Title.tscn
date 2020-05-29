@@ -58,12 +58,12 @@ margin_right = 685.0
 margin_bottom = 474.0
 size_flags_horizontal = 4
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Start Button" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 margin_right = 363.0
 margin_bottom = 100.0
 texture_normal = ExtResource( 3 )
 
-[node name="TextureButton2" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Exit Buttom" type="TextureButton" parent="MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 104.0
 margin_right = 363.0
 margin_bottom = 204.0
@@ -72,5 +72,5 @@ texture_normal = ExtResource( 5 )
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 500, 0 )
 anchor_mode = 0
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton" to="." method="_on_TextureButton_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Start Button" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/VBoxContainer/Exit Buttom" to="." method="_on_TextureButton2_pressed"]

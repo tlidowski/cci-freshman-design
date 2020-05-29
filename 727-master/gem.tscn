@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://diamond_3.png" type="Texture" id=1]
 [ext_resource path="res://gem.gd" type="Script" id=2]
-[ext_resource path="res://gemgravity.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.41158
@@ -22,7 +21,6 @@ __meta__ = {
 [node name="gemgravity" type="KinematicBody2D" parent="."]
 collision_layer = 0
 collision_mask = 4
-script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="gemgravity"]
 position = Vector2( 0.124146, 0.945465 )

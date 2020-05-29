@@ -40,9 +40,9 @@ margin_top = 97.4633
 margin_right = 526.656
 margin_bottom = 104.463
 custom_styles/fg = SubResource( 1 )
-max_value = 50.0
+max_value = 70.0
 step = 1.0
-value = 50.0
+value = 70.0
 percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
