@@ -1,10 +1,9 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://tileset1.2.tres" type="TileSet" id=1]
 [ext_resource path="res://Zombies.gd" type="Script" id=2]
 [ext_resource path="res://Label5.gd" type="Script" id=3]
 [ext_resource path="res://Upgrades.gd" type="Script" id=5]
-[ext_resource path="res://Popup.gd" type="Script" id=6]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://portal/frame_24_delay-0.13s.png" type="Texture" id=8]
 [ext_resource path="res://portal/frame_07_delay-0.12s.png" type="Texture" id=9]
@@ -34,26 +33,6 @@
 [ext_resource path="res://portal/frame_22_delay-0.13s.png" type="Texture" id=33]
 [ext_resource path="res://portal/frame_01_delay-0.12s.png" type="Texture" id=34]
 [ext_resource path="res://Taiga-Asset-Pack_vnitti/PNG/Middleground.png" type="Texture" id=35]
-
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 32 ), ExtResource( 34 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 19 ), ExtResource( 27 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 33 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 26 ), ExtResource( 24 ) ],
-"loop": true,
-"name": "animation",
-"speed": 5.0
-} ]
-
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 25.8024
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.0901961, 0.529412, 0.0784314, 1 )
-border_width_left = 2
-border_width_top = 2
-border_width_bottom = 2
-border_color = Color( 0.972549, 0.945098, 0.945098, 1 )
-border_blend = true
-corner_detail = 10
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 88.1286, 23.8954 )
@@ -166,6 +145,26 @@ extents = Vector2( 98.3656, 16.8954 )
 [sub_resource type="RectangleShape2D" id=40]
 extents = Vector2( 23.7541, 9.08591 )
 
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 32 ), ExtResource( 34 ), ExtResource( 14 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 28 ), ExtResource( 22 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 29 ), ExtResource( 23 ), ExtResource( 25 ), ExtResource( 19 ), ExtResource( 27 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 33 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 26 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "animation",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 25.8024
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0901961, 0.529412, 0.0784314, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color( 0.972549, 0.945098, 0.945098, 1 )
+border_blend = true
+corner_detail = 10
+
 [sub_resource type="CapsuleShape2D" id=41]
 
 [node name="LevelTwo" type="Node2D"]
@@ -186,121 +185,10 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Control" type="Control" parent="."]
-margin_left = 0.197605
-margin_top = -0.476192
-margin_right = 40.1976
-margin_bottom = 39.5238
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Popup" type="Popup" parent="Control"]
-visible = true
-margin_right = 40.0
-margin_bottom = 40.0
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Control/Popup"]
-margin_left = 6.94758
-margin_top = 282.155
-margin_right = 164.948
-margin_bottom = 296.155
-rect_scale = Vector2( 0.612936, 0.775619 )
-text = "Use arrow keys to move."
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label2" type="Label" parent="Control/Popup"]
-margin_left = 95.7983
-margin_top = 250.872
-margin_right = 239.798
-margin_bottom = 264.872
-rect_scale = Vector2( 0.668126, 0.770921 )
-text = "Press UP  to jump."
-
-[node name="Label3" type="Label" parent="Control/Popup"]
-margin_left = 177.826
-margin_top = 220.935
-margin_right = 304.826
-margin_bottom = 234.935
-rect_scale = Vector2( 0.722935, 0.672077 )
-text = "Press TAB to attack."
-
-[node name="Label4" type="Label" parent="Control/Popup"]
-margin_left = 384.123
-margin_top = 256.745
-margin_right = 575.123
-margin_bottom = 270.745
-rect_scale = Vector2( 0.74899, 0.881002 )
-text = "Press SPACE  to go through portal."
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 0.197605, -0.476192 )
-
-[node name="Portal" type="AnimatedSprite" parent="Area2D"]
-position = Vector2( 705.557, 313.819 )
-scale = Vector2( 0.253647, 0.336575 )
-frames = SubResource( 1 )
-animation = "animation"
-frame = 3
-playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 704.28, 315.386 )
-shape = SubResource( 2 )
-
-[node name="Player" parent="." instance=ExtResource( 7 )]
-position = Vector2( -60, 280 )
-collision_mask = 4
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 298.155, -115.663 )
-offset = Vector2( 250, -100 )
-current = true
-zoom = Vector2( 0.9, 0.9 )
-limit_left = 0
-limit_top = 0
-limit_right = 640
-limit_bottom = 640
-drag_margin_h_enabled = true
-
-[node name="Label5" type="Label" parent="Player"]
-margin_left = 314.228
-margin_top = -151.348
-margin_right = 482.228
-margin_bottom = -109.348
-align = 1
-valign = 1
-clip_text = true
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HealthBar" type="ProgressBar" parent="Player"]
-margin_left = 349.296
-margin_top = -111.124
-margin_right = 445.296
-margin_bottom = -91.1241
-custom_styles/fg = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-max_value = 25.0
-step = 1.0
-value = 25.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Zombies" type="Node2D" parent="."]
-position = Vector2( 0, -3 )
-script = ExtResource( 2 )
-
 [node name="Terrain" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Terrain"]
 collision_layer = 4
@@ -458,6 +346,67 @@ shape = SubResource( 39 )
 [node name="CollisionShape2D37" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
 position = Vector2( 409, 280 )
 shape = SubResource( 40 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0.197605, -0.476192 )
+
+[node name="Portal" type="AnimatedSprite" parent="Area2D"]
+position = Vector2( 705.557, 313.819 )
+scale = Vector2( 0.253647, 0.336575 )
+frames = SubResource( 1 )
+animation = "animation"
+frame = 16
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 704.28, 315.386 )
+shape = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( -60, 280 )
+collision_mask = 4
+
+[node name="Label5" type="Label" parent="Player"]
+margin_left = 314.228
+margin_top = -151.348
+margin_right = 482.228
+margin_bottom = -109.348
+align = 1
+valign = 1
+clip_text = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 0, -1.79477 )
+scale = Vector2( 1, 1 )
+offset = Vector2( 120, -40 )
+current = true
+zoom = Vector2( 0.4, 0.45 )
+limit_left = -80
+limit_top = 0
+limit_right = 960
+limit_bottom = 640
+
+[node name="HealthBar" type="ProgressBar" parent="Player"]
+margin_left = 349.296
+margin_top = -111.124
+margin_right = 445.296
+margin_bottom = -91.1241
+custom_styles/fg = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+max_value = 25.0
+step = 1.0
+value = 25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Zombies" type="Node2D" parent="."]
+position = Vector2( 0, -3 )
+script = ExtResource( 2 )
 
 [node name="Upgrades" type="KinematicBody2D" parent="."]
 position = Vector2( 0.197605, -0.476192 )

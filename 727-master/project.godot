@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="projectCI"
-run/main_scene="res://Level0.tscn"
+run/main_scene="res://LevelTwo.tscn"
 
 [autoload]
 
