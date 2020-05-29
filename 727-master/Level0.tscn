@@ -2,7 +2,7 @@
 
 [ext_resource path="res://ChangeScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Taiga-Asset-Pack_vnitti/PNG/Middleground.png" type="Texture" id=4]
-[ext_resource path="res://Zombies.gd" type="Script" id=5]
+[ext_resource path="res://Zombies_0.gd" type="Script" id=5]
 [ext_resource path="res://Label5.gd" type="Script" id=6]
 [ext_resource path="res://Upgrades.gd" type="Script" id=11]
 [ext_resource path="res://tileset1.2.tres" type="TileSet" id=38]
@@ -159,11 +159,11 @@ collision_mask = 4
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 298.155, -115.663 )
-offset = Vector2( 0, -60 )
+offset = Vector2( 40, -40 )
 current = true
-zoom = Vector2( 0.6, 0.65 )
-limit_left = 0
-limit_top = 0
+zoom = Vector2( 0.4, 0.45 )
+limit_left = -50
+limit_top = -10
 limit_right = 640
 limit_bottom = 640
 
@@ -172,8 +172,6 @@ margin_left = 314.228
 margin_top = -151.348
 margin_right = 482.228
 margin_bottom = -109.348
-text = "Gems Collected: 0
-Zombies Killed: 0"
 align = 1
 valign = 1
 clip_text = true
@@ -204,10 +202,11 @@ shape = SubResource( 9 )
 disabled = true
 
 [node name="Directions" type="Label" parent="."]
-margin_left = 12.6807
-margin_top = -49.0
-margin_right = 296.681
-margin_bottom = 33.0
+margin_left = 6.79621
+margin_top = 122.395
+margin_right = 289.796
+margin_bottom = 204.395
+rect_scale = Vector2( 0.76, 0.759999 )
 text = "ARROW KEYS to move.
 UP to jump.
 TAB to attack.
@@ -219,10 +218,11 @@ __meta__ = {
 }
 
 [node name="Upgrades explanations" type="Label" parent="."]
-margin_left = 396.0
-margin_top = -50.0
-margin_right = 601.0
-margin_bottom = -2.0
+margin_left = 115.192
+margin_top = 266.134
+margin_right = 320.192
+margin_bottom = 314.134
+rect_scale = Vector2( 0.72, 0.72 )
 text = "Bubbles increase your health.
 Orbs increase your damage."
 align = 2

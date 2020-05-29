@@ -254,9 +254,23 @@ shape = SubResource( 28 )
 position = Vector2( 78.4011, 175.891 )
 shape = SubResource( 33 )
 
+<<<<<<< HEAD
 [node name="CollisionShape2D30" type="CollisionShape2D" parent="Terrain2/StaticBody2D"]
 position = Vector2( 784.444, 160.277 )
 shape = SubResource( 34 )
+=======
+[node name="Portal" type="AnimatedSprite" parent="Area2D"]
+position = Vector2( 705.557, 313.819 )
+scale = Vector2( 0.253647, 0.336575 )
+frames = SubResource( 29 )
+animation = "animation"
+frame = 13
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 704.28, 315.386 )
+shape = SubResource( 30 )
+>>>>>>> 69bdfde84db806c81668a7d4cce9188e3d847bb0
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( -180.623, 329.795 )
@@ -264,7 +278,6 @@ collision_mask = 4
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 position = Vector2( -3.05176e-05, -1.7948 )
-scale = Vector2( 1, 1 )
 offset = Vector2( 90, -90 )
 current = true
 zoom = Vector2( 0.4, 0.45 )
