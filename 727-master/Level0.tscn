@@ -198,6 +198,7 @@ __meta__ = {
 script = ExtResource( 11 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Upgrades"]
+visible = false
 shape = SubResource( 9 )
 disabled = true
 
@@ -209,8 +210,7 @@ margin_bottom = 204.395
 rect_scale = Vector2( 0.76, 0.759999 )
 text = "ARROW KEYS to move.
 UP to jump.
-TAB to attack.
-SPACE at the portal when you have 3 gems."
+TAB to attack."
 valign = 1
 autowrap = true
 __meta__ = {

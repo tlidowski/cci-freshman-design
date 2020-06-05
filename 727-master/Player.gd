@@ -72,6 +72,7 @@ func _physics_process(delta):
 
 func _on_Player_area_entered(area):
 	if health <= 0:
+		GlobalVars.reset()
 		get_tree().reload_current_scene()
 	else:
 		if "Zombie" in area.name:

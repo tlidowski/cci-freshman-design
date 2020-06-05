@@ -12,6 +12,13 @@ signal orbsignal()
 signal bubblesignal()
 signal zcountsignal()
 
+func reset():
+	self.gem_count = 0
+	self.zombie_kills = 0
+	self.orb = 0
+	self.bubbles = 0
+	self.zombies = 0
+
 func addgem():
 	self.gem_count += 1
 	emit_signal("gemsignal")

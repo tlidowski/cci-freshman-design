@@ -292,7 +292,7 @@ position = Vector2( 705.557, 313.819 )
 scale = Vector2( 0.253647, 0.336575 )
 frames = SubResource( 29 )
 animation = "animation"
-frame = 18
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
