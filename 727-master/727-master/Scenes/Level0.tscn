@@ -1,0 +1,239 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://ChangeScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://AssetPack_Tileset/PNG/Middleground.png" type="Texture" id=4]
+[ext_resource path="res://zombie_scenes/Zombies_0.gd" type="Script" id=5]
+[ext_resource path="res://item_scenes/Label5.gd" type="Script" id=6]
+[ext_resource path="res://item_scenes/Upgrades.gd" type="Script" id=11]
+[ext_resource path="res://tileset1.2.tres" type="TileSet" id=38]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=39]
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24.6082, 37.6681 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 337.479, 32.8747 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 10, 193.728 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 24.3028, 16 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 119.634, 41.2314 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 48.0998, 24.0593 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 32.1268, 16.1315 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.0901961, 0.529412, 0.0784314, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color( 0.972549, 0.945098, 0.945098, 1 )
+border_blend = true
+corner_detail = 10
+
+[sub_resource type="CapsuleShape2D" id=9]
+
+[node name="Tutorial" type="Node2D"]
+position = Vector2( 0.197605, -0.476192 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 319.959, 158.225 )
+scale = Vector2( 1.66295, 1.67706 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Terrain" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Floor" type="StaticBody2D" parent="Terrain"]
+collision_layer = 4
+
+[node name="TileMap" type="TileMap" parent="Terrain/Floor"]
+position = Vector2( 0, 2 )
+tile_set = ExtResource( 38 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1048593, 7, 0, 1048594, 1, 0, 1048595, 536870919, 0, 1114129, 9, 0, 1114130, 536870922, 0, 1114131, 536870921, 0, 1179665, 9, 0, 1179666, 536870922, 0, 1179667, 536870921, 0, 1310719, 0, 0, 1245184, 1, 0, 1245185, 1, 0, 1245186, 1, 0, 1245187, 1, 0, 1245188, 1, 0, 1245189, 1, 0, 1245190, 1, 0, 1245191, 1, 0, 1245192, 1, 0, 1245193, 1, 0, 1245194, 1, 0, 1245195, 1, 0, 1245196, 1, 0, 1245197, 1, 0, 1245198, 1, 0, 1245199, 1, 0, 1245200, 1, 0, 1245201, 1, 0, 1245202, 1, 0, 1245203, 1, 0, 1245204, 1, 0, 1245205, 1, 0, 1245206, 1, 0, 1245207, 1, 0, 1245208, 1, 0, 1245209, 1, 0, 1245210, 1, 0, 1245211, 1, 0, 1245212, 1, 0, 1245213, 1, 0, 1245214, 1, 0, 1245215, 1, 0, 1245216, 1, 0, 1245217, 1, 0, 1245218, 1, 0, 1245219, 1, 0, 1245220, 1, 0, 1245221, 1, 0, 1245222, 1, 0, 1245223, 1, 0, 1245224, 8, 0, 1376255, 9, 0, 1310720, 10, 0, 1310721, 10, 0, 1310722, 10, 0, 1310723, 10, 0, 1310724, 6, 0, 1310725, 10, 0, 1310726, 6, 0, 1310727, 10, 0, 1310728, 6, 0, 1310729, 6, 0, 1310730, 10, 0, 1310731, 6, 0, 1310732, 6, 0, 1310733, 10, 0, 1310734, 6, 0, 1310735, 10, 0, 1310736, 6, 0, 1310737, 6, 0, 1310738, 10, 0, 1310739, 10, 0, 1310740, 6, 0, 1310741, 6, 0, 1310742, 10, 0, 1310743, 6, 0, 1310744, 6, 0, 1310745, 6, 0, 1310746, 10, 0, 1310747, 10, 0, 1310748, 10, 0, 1310749, 6, 0, 1310750, 10, 0, 1310751, 6, 0, 1310752, 10, 0, 1310753, 10, 0, 1310754, 10, 0, 1310755, 6, 0, 1310756, 10, 0, 1310757, 10, 0, 1310758, 10, 0, 1310759, 10, 0, 1310760, 11, 0, 1441791, 9, 0, 1376256, 10, 0, 1376257, 10, 0, 1376258, 10, 0, 1376259, 6, 0, 1376260, 6, 0, 1376261, 10, 0, 1376262, 10, 0, 1376263, 10, 0, 1376264, 6, 0, 1376265, 6, 0, 1376266, 10, 0, 1376267, 6, 0, 1376268, 10, 0, 1376269, 10, 0, 1376270, 10, 0, 1376271, 10, 0, 1376272, 10, 0, 1376273, 10, 0, 1376274, 6, 0, 1376275, 10, 0, 1376276, 6, 0, 1376277, 6, 0, 1376278, 10, 0, 1376279, 10, 0, 1376280, 10, 0, 1376281, 10, 0, 1376282, 6, 0, 1376283, 6, 0, 1376284, 10, 0, 1376285, 10, 0, 1376286, 10, 0, 1376287, 10, 0, 1376288, 10, 0, 1376289, 6, 0, 1376290, 6, 0, 1376291, 10, 0, 1376292, 10, 0, 1376293, 6, 0, 1376294, 6, 0, 1376295, 6, 0, 1376296, 11, 0, 1507327, 1610612741, 0, 1441792, 1610612740, 0, 1441793, 1610612740, 0, 1441794, 1610612740, 0, 1441795, 1610612740, 0, 1441796, 1610612740, 0, 1441797, 1610612740, 0, 1441798, 1610612740, 0, 1441799, 1610612740, 0, 1441800, 1610612740, 0, 1441801, 1610612740, 0, 1441802, 1610612740, 0, 1441803, 1610612740, 0, 1441804, 1610612740, 0, 1441805, 1610612740, 0, 1441806, 1610612740, 0, 1441807, 1610612740, 0, 1441808, 1610612740, 0, 1441809, 1610612740, 0, 1441810, 1610612740, 0, 1441811, 1610612740, 0, 1441812, 1610612740, 0, 1441813, 1610612740, 0, 1441814, 1610612740, 0, 1441815, 1610612740, 0, 1441816, 1610612740, 0, 1441817, 1610612740, 0, 1441818, 1610612740, 0, 1441819, 1610612740, 0, 1441820, 1610612740, 0, 1441821, 1610612740, 0, 1441822, 1610612740, 0, 1441823, 1610612740, 0, 1441824, 1610612740, 0, 1441825, 1610612740, 0, 1441826, 1610612740, 0, 1441827, 1610612740, 0, 1441828, 1610612740, 0, 1441829, 1610612740, 0, 1441830, 1610612740, 0, 1441831, 1610612740, 0, 1441832, 1610612739, 0 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/Floor"]
+position = Vector2( 295.427, 295.223 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Floor"]
+position = Vector2( 319.845, 338.74 )
+shape = SubResource( 2 )
+
+[node name="Wall" type="StaticBody2D" parent="Terrain"]
+collision_layer = 4
+
+[node name="TileMap" type="TileMap" parent="Terrain/Wall"]
+tile_set = ExtResource( 38 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 40, 12, 0, 65576, 12, 0, 131112, 12, 0, 196648, 12, 0, 262184, 12, 0, 327720, 12, 0, 393256, 12, 0, 458792, 12, 0, 524328, 12, 0, 589864, 12, 0, 655400, 12, 0, 720936, 12, 0, 786472, 12, 0, 852008, 12, 0, 917544, 12, 0, 983080, 12, 0, 1048616, 12, 0, 1114152, 12, 0, 1179688, 12, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Wall"]
+visible = false
+position = Vector2( 647.001, 187 )
+shape = SubResource( 3 )
+
+[node name="Wall2" type="StaticBody2D" parent="Terrain"]
+position = Vector2( -656.001, -1 )
+collision_layer = 4
+
+[node name="TileMap" type="TileMap" parent="Terrain/Wall2"]
+tile_set = ExtResource( 38 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 40, 12, 0, 65576, 12, 0, 131112, 12, 0, 196648, 12, 0, 262184, 12, 0, 327720, 12, 0, 393256, 12, 0, 458792, 12, 0, 524328, 12, 0, 589864, 12, 0, 655400, 12, 0, 720936, 12, 0, 786472, 12, 0, 852008, 12, 0, 917544, 12, 0, 983080, 12, 0, 1048616, 12, 0, 1114152, 12, 0, 1179688, 12, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/Wall2"]
+visible = false
+position = Vector2( 647.001, 187 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Terrain"]
+position = Vector2( 21.4221, -25.5743 )
+collision_layer = 4
+
+[node name="TileMap" type="TileMap" parent="Terrain/StaticBody2D"]
+tile_set = ExtResource( 38 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 393218, 7, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 536870919, 0, 458754, 1073741833, 0, 458755, 1073741834, 0, 458756, 1073741834, 0, 458757, 1073741834, 0, 458758, 1073741834, 0, 458759, 1073741835, 0, 524290, 1073741827, 0, 524291, 1073741828, 0, 524292, 1073741828, 0, 524293, 1073741828, 0, 524294, 1073741828, 0, 524295, 1073741829, 0, 524298, 7, 0, 524299, 1, 0, 524300, 536870919, 0, 589834, 1073741827, 0, 589835, 1073741828, 0, 589836, 1073741829, 0, 589846, 7, 0, 589847, 1, 0, 589848, 536870913, 0, 589849, 536870913, 0, 589850, 536870913, 0, 589851, 536870913, 0, 589852, 536870913, 0, 589853, 536870913, 0, 589854, 536870913, 0, 589855, 536870913, 0, 589856, 536870913, 0, 589857, 536870913, 0, 589858, 536870913, 0, 589859, 536870913, 0, 589860, 536870919, 0, 655382, 1073741833, 0, 655383, 10, 0, 655384, 1073741834, 0, 655385, 1073741834, 0, 655386, 1073741834, 0, 655387, 1073741834, 0, 655388, 1073741834, 0, 655389, 1073741834, 0, 655390, 1073741834, 0, 655391, 1073741834, 0, 655392, 1073741834, 0, 655393, 1073741834, 0, 655394, 1073741834, 0, 655395, 1073741834, 0, 655396, 1073741835, 0, 720912, 7, 0, 720913, 1, 0, 720914, 536870919, 0, 720918, 1073741833, 0, 720919, 10, 0, 720920, 1073741834, 0, 720921, 1073741834, 0, 720922, 1073741834, 0, 720923, 1073741834, 0, 720924, 1073741834, 0, 720925, 1073741834, 0, 720926, 10, 0, 720927, 1073741834, 0, 720928, 1073741834, 0, 720929, 1073741834, 0, 720930, 1073741834, 0, 720931, 1073741834, 0, 720932, 1073741835, 0, 786448, 1073741827, 0, 786449, 1073741828, 0, 786450, 1073741829, 0, 786454, 1073741833, 0, 786455, 10, 0, 786456, 1073741834, 0, 786457, 1073741834, 0, 786458, 1073741834, 0, 786459, 1073741834, 0, 786460, 1073741834, 0, 786461, 1073741834, 0, 786462, 1073741834, 0, 786463, 1073741834, 0, 786464, 1073741834, 0, 786465, 1073741834, 0, 786466, 1073741834, 0, 786467, 1073741834, 0, 786468, 1073741835, 0, 851979, 7, 0, 851980, 1, 0, 851981, 536870919, 0, 851990, 1073741827, 0, 851991, 1073741828, 0, 851992, 1073741828, 0, 851993, 1073741828, 0, 851994, 1073741828, 0, 851995, 1073741828, 0, 851996, 1073741828, 0, 851997, 1073741828, 0, 851998, 1073741828, 0, 851999, 1073741828, 0, 852000, 1073741828, 0, 852001, 1073741828, 0, 852002, 1073741828, 0, 852003, 1073741828, 0, 852004, 1073741829, 0, 917515, 1073741827, 0, 917516, 1073741828, 0, 917517, 1073741829, 0, 983046, 7, 0, 983047, 1, 0, 983048, 536870919, 0, 1048582, 1073741827, 0, 1048583, 1073741828, 0, 1048584, 1073741829, 0, 1114112, 7, 0, 1114113, 1, 0, 1114114, 1, 0, 1114115, 536870919, 0, 1179648, 1073741827, 0, 1179649, 1073741828, 0, 1179650, 1073741828, 0, 1179651, 1073741829, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
+position = Vector2( 120.258, 256.616 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
+position = Vector2( 199.588, 223.802 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
+position = Vector2( 279.714, 191.723 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
+position = Vector2( 184.185, 144.571 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
+position = Vector2( 471.956, 184.363 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
+position = Vector2( 79.5953, 119.423 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Terrain/StaticBody2D"]
+position = Vector2( 31.7825, 288.093 )
+shape = SubResource( 7 )
+
+[node name="Flowers!" type="TileMap" parent="Terrain"]
+position = Vector2( -18.2895, 2.39493 )
+tile_set = ExtResource( 38 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1179651, 26, 0, 1179659, 27, 0, 1179665, 27, 0, 1179673, 28, 0, 1179678, 27, 0, 1179683, 30, 0, 1179686, 27, 0 )
+
+[node name="Zombies" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 39 )]
+position = Vector2( -148.967, 228.539 )
+collision_mask = 4
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 298.155, -115.663 )
+offset = Vector2( 40, -40 )
+current = true
+zoom = Vector2( 0.4, 0.45 )
+limit_left = -50
+limit_top = -10
+limit_right = 640
+limit_bottom = 640
+
+[node name="Label5" type="Label" parent="Player"]
+margin_left = 314.228
+margin_top = -151.348
+margin_right = 482.228
+margin_bottom = -109.348
+align = 1
+valign = 1
+clip_text = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="ProgressBar" parent="Player"]
+margin_left = 349.296
+margin_top = -111.124
+margin_right = 445.296
+margin_bottom = -91.1241
+custom_styles/fg = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+max_value = 25.0
+step = 1.0
+value = 25.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upgrades" type="KinematicBody2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Upgrades"]
+visible = false
+shape = SubResource( 9 )
+disabled = true
+
+[node name="Directions" type="Label" parent="."]
+margin_left = 6.79621
+margin_top = 122.395
+margin_right = 289.796
+margin_bottom = 204.395
+rect_scale = Vector2( 0.76, 0.759999 )
+text = "ARROW KEYS to move.
+UP to jump.
+TAB to attack."
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Upgrades explanations" type="Label" parent="."]
+margin_left = 115.192
+margin_top = 266.134
+margin_right = 320.192
+margin_bottom = 314.134
+rect_scale = Vector2( 0.72, 0.72 )
+text = "Bubbles increase your health.
+Orbs increase your damage."
+align = 2
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeScene" parent="." instance=ExtResource( 1 )]
+position = Vector2( -30.2679, -3.60049 )
+target_stage = "res://Scenes/LevelOne.tscn"
