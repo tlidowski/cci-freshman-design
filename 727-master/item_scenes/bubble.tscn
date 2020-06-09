@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://item_scenes/Power_template.png" type="Texture" id=1]
+[ext_resource path="res://zombie_scenes/bubble.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.86603
@@ -12,7 +13,7 @@ radius = 7.80777
 position = Vector2( 16.5639, 3.53354 )
 collision_layer = 64
 collision_mask = 16
-script = null
+script = ExtResource( 2 )
 
 [node name="bubblegravity" type="KinematicBody2D" parent="."]
 collision_layer = 0
