@@ -22,6 +22,10 @@ func reset():
 func addgem():
 	self.gem_count += 1
 	emit_signal("gemsignal")
+	
+func resetgem():
+	self.gem_count = 0
+	emit_signal("gemsignal")
 
 func addkill():
 	self.zombie_kills += 1
