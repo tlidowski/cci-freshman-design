@@ -7,8 +7,6 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://AssetPack_Tileset/PNG/Middleground.png" type="Texture" id=35]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 88.1286, 23.8954 )
 

@@ -8,8 +8,6 @@
 [ext_resource path="res://tileset1.2.tres" type="TileSet" id=38]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=39]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.6082, 37.6681 )
 

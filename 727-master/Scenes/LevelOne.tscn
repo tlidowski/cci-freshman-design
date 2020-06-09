@@ -1,40 +1,13 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://tileset1.2.tres" type="TileSet" id=1]
-[ext_resource path="res://portal/frame_26_delay-0.12s.png" type="Texture" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://portal/frame_08_delay-0.13s.png" type="Texture" id=4]
-[ext_resource path="res://portal/frame_23_delay-0.12s.png" type="Texture" id=5]
 [ext_resource path="res://zombie_scenes/Zombies.gd" type="Script" id=6]
-[ext_resource path="res://portal/frame_22_delay-0.13s.png" type="Texture" id=8]
-[ext_resource path="res://portal/frame_01_delay-0.12s.png" type="Texture" id=9]
-[ext_resource path="res://portal/frame_10_delay-0.13s.png" type="Texture" id=10]
-[ext_resource path="res://portal/frame_12_delay-0.13s.png" type="Texture" id=11]
+[ext_resource path="res://ChangeScene1.gd" type="Script" id=7]
 [ext_resource path="res://AssetPack_Tileset/PNG/Middleground.png" type="Texture" id=12]
-[ext_resource path="res://portal/frame_24_delay-0.13s.png" type="Texture" id=13]
-[ext_resource path="res://portal/frame_18_delay-0.13s.png" type="Texture" id=14]
-[ext_resource path="res://portal/frame_06_delay-0.13s.png" type="Texture" id=15]
-[ext_resource path="res://portal/frame_00_delay-0.13s.png" type="Texture" id=16]
 [ext_resource path="res://item_scenes/Label5.gd" type="Script" id=17]
 [ext_resource path="res://item_scenes/Upgrades.gd" type="Script" id=18]
-[ext_resource path="res://portal/frame_05_delay-0.12s.png" type="Texture" id=19]
-[ext_resource path="res://portal/frame_07_delay-0.12s.png" type="Texture" id=20]
-[ext_resource path="res://portal/frame_02_delay-0.13s.png" type="Texture" id=21]
-[ext_resource path="res://portal/frame_03_delay-0.12s.png" type="Texture" id=22]
-[ext_resource path="res://portal/frame_21_delay-0.12s.png" type="Texture" id=23]
-[ext_resource path="res://portal/frame_15_delay-0.12s.png" type="Texture" id=24]
-[ext_resource path="res://portal/frame_20_delay-0.13s.png" type="Texture" id=25]
-[ext_resource path="res://portal/frame_04_delay-0.13s.png" type="Texture" id=27]
-[ext_resource path="res://portal/frame_09_delay-0.12s.png" type="Texture" id=28]
-[ext_resource path="res://portal/frame_11_delay-0.12s.png" type="Texture" id=29]
-[ext_resource path="res://portal/frame_14_delay-0.13s.png" type="Texture" id=30]
-[ext_resource path="res://portal/frame_19_delay-0.12s.png" type="Texture" id=31]
-[ext_resource path="res://portal/frame_16_delay-0.13s.png" type="Texture" id=32]
-[ext_resource path="res://portal/frame_13_delay-0.12s.png" type="Texture" id=33]
-[ext_resource path="res://portal/frame_17_delay-0.12s.png" type="Texture" id=34]
-[ext_resource path="res://portal/frame_25_delay-0.12s.png" type="Texture" id=35]
-
-
+[ext_resource path="res://ChangeScene.tscn" type="PackedScene" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 528.195, 15.8829 )
@@ -119,17 +92,6 @@ extents = Vector2( 7.45166, 154.953 )
 
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 24.3366, 32.0384 )
-
-[sub_resource type="SpriteFrames" id=29]
-animations = [ {
-"frames": [ ExtResource( 16 ), ExtResource( 9 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 4 ), ExtResource( 28 ), ExtResource( 10 ), ExtResource( 29 ), ExtResource( 11 ), ExtResource( 33 ), ExtResource( 30 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 14 ), ExtResource( 31 ), ExtResource( 25 ), ExtResource( 23 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 13 ), ExtResource( 35 ), ExtResource( 2 ) ],
-"loop": true,
-"name": "animation",
-"speed": 5.0
-} ]
-
-[sub_resource type="CapsuleShape2D" id=30]
-radius = 25.8024
 
 [sub_resource type="StyleBoxFlat" id=31]
 bg_color = Color( 0.0901961, 0.529412, 0.0784314, 1 )
@@ -283,23 +245,6 @@ shape = SubResource( 27 )
 position = Vector2( 553.099, 287.029 )
 shape = SubResource( 28 )
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 146.789, -274.2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Portal" type="AnimatedSprite" parent="Area2D"]
-position = Vector2( 705.557, 313.819 )
-scale = Vector2( 0.253647, 0.336575 )
-frames = SubResource( 29 )
-animation = "animation"
-playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 704.28, 315.386 )
-shape = SubResource( 30 )
-
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( -180.623, 329.795 )
 collision_mask = 4
@@ -358,3 +303,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Upgrades"]
 shape = SubResource( 32 )
 disabled = true
+
+[node name="ChangeScene" parent="." instance=ExtResource( 26 )]
+position = Vector2( 284.015, -225.699 )
+script = ExtResource( 7 )

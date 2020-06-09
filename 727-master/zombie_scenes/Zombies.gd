@@ -9,6 +9,7 @@ const RZ = preload("res://zombie_scenes/RottingZombie.tscn")
 const HZ = preload("res://zombie_scenes/HeadlessZombie.tscn")
 
 func _ready():
+	GlobalVars.resetzombie()
 	while gszcount != 2:
 		var zombie = GSZ.instance()
 		add_child(zombie)

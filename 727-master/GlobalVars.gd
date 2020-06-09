@@ -35,6 +35,10 @@ func bubbleobtained():
 	self.bubbles += 1
 	emit_signal("bubblesignal")
 	
+func resetzombie():
+	self.zombies = 0
+	emit_signal("zcountsignal")
+	
 func addzombie():
 	self.zombies += 1
 	emit_signal("zcountsignal")

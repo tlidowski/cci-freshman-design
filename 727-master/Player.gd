@@ -7,7 +7,7 @@ onready var hpbar = get_node("HealthBar")
 
 const SPEED = 100
 const GRAVITY = 9.81
-const JUMP_POWER = -250
+const JUMP_POWER = -270
 const FLOOR = Vector2(0, -1)
 const BULLET = preload("res://item_scenes/Pewpew.tscn")
 

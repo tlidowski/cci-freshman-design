@@ -4,11 +4,13 @@ var gszcount = 0
 var rzcount = 0
 var hzcount = 0
 
-const GSZ = preload("res://GreenShortsZombie.tscn")
-const RZ = preload("res://RottingZombie.tscn")
-const HZ = preload("res://HeadlessZombie.tscn")
+const GSZ = preload("res://zombie_scenes/GreenShortsZombie.tscn")
+const RZ = preload("res://zombie_scenes/RottingZombie.tscn")
+const HZ = preload("res://zombie_scenes/HeadlessZombie.tscn")
 
 func _ready():
+	GlobalVars.connect("zcountsignal", self, "_ready")
+	GlobalVars.resetzombies()
 	while gszcount != 2:
 		var zombie = GSZ.instance()
 		add_child(zombie)
