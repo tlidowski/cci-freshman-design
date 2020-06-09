@@ -1,3 +1,5 @@
+#Refer to "ChangeScene.gd"
+
 extends Area2D
 
 export(String, FILE, "*.tscn") var target_stage

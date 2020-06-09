@@ -1,3 +1,5 @@
+#Refer to "Zombies.gd"
+
 extends Node2D
 
 var gszcount = 0

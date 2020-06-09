@@ -1,3 +1,9 @@
+#Name: "Headless" Zombie Script
+#Purpose: Includes all actions relating to a Zombie. Allows movement, animation, and interaction.
+#Version/Date: 2.0 - 8 June 2020
+#Author(s): Adrienne C, Shirley W
+#Dependencies:
+
 extends KinematicBody2D
 
 const SPEED = 40

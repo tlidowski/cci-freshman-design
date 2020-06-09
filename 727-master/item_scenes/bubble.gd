@@ -1,16 +1,12 @@
+#Name: Bubble
+#Purpose: Allows interaction with the bubble sprite.
+#Version/Date: 1.0 - 8 June 2020
+#Author(s): Adrienne C, Shirley W
+#Dependencies:
 extends Area2D
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+#If Player touches the bubble, it is picked up (bubble disappears and bubble counter is incremented).
+func _on_bubble_area_entered(area):
+	if "Player" in area.name:
+		GlobalVars.bubbleobtained()
+		queue_free()

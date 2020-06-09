@@ -1,3 +1,9 @@
+#Name: "Green Shorts" Zombie Script
+#Purpose: Includes all actions relating to a Zombie. Allows movement, animation, and interaction.
+#Version/Date: 2.0 - 8 June 2020
+#Author(s): Adrienne C, Shirley W
+#Dependencies:
+
 extends KinematicBody2D
 
 const SPEED = 50
@@ -5,8 +11,6 @@ const GRAVITY = 9.81
 const JUMP_POWER = -250
 const FLOOR = Vector2(0, -1)
 const GEM = preload("res://item_scenes/gem.tscn")
-
-
 
 var velocity = Vector2(0, 0)
 var dir = 1
@@ -21,13 +25,13 @@ onready var zombie = get_node("AnimatedSprite")
 onready var hpbar = get_node("HealthBar")
 	
 #When function is called, all movement ceases and zombie is destroyed.
+#Gem scene is instanced and "dropped" where the zombie dies.
 func dead():
 	is_dead = true
 	var gem = GEM.instance()
 	get_parent().add_child(gem)
 	gem.position = $Position2D.global_position
 	queue_free()
-	add_child(self)
 
 func _physics_process(delta):
 	if is_dead == false:
@@ -39,11 +43,14 @@ func _physics_process(delta):
 		var switchingvel = switchvel.randi_range(1, 100)
 		
 		#Randomized movement. 
-		if switchingvel == 1: #If number randomed is 1, move right.
+		#If number randomed is 1, move right.
+		#If number randomed is 100, move left.
+		#If number randomed is 50, jump.
+		if switchingvel == 1: 
 			dir = 1
-		elif switchingvel == 100: #If number randomed is 100, move left.
+		elif switchingvel == 100:
 			dir = -1
-		elif switchingvel == 50: #If number randomed is 50, jump.
+		elif switchingvel == 50: 
 			if on_ground == true:
 				velocity.y = JUMP_POWER
 				on_ground = false
@@ -53,7 +60,7 @@ func _physics_process(delta):
 			dir *= -1
 			$AnimatedSprite/RayCast2D.position.x *= -1
 		
-		#No double jumping!
+		#Restricts double jumping.
 		if is_on_floor():
 			on_ground = true
 		else:
@@ -65,7 +72,8 @@ func _physics_process(delta):
 		elif dir < 0:
 			zombie.set_flip_h(true)
 		zombie.play(anim)
-			
+		
+		#Updates zombie health.	
 		hpbar.set_value(health)
 		
 
