@@ -93,7 +93,7 @@ extents = Vector2( 7.45166, 154.953 )
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 24.3366, 32.0384 )
 
-[sub_resource type="StyleBoxFlat" id=31]
+[sub_resource type="StyleBoxFlat" id=29]
 bg_color = Color( 0.0901961, 0.529412, 0.0784314, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -102,7 +102,7 @@ border_color = Color( 0.972549, 0.945098, 0.945098, 1 )
 border_blend = true
 corner_detail = 10
 
-[sub_resource type="CapsuleShape2D" id=32]
+[sub_resource type="CapsuleShape2D" id=30]
 
 [node name="LevelOne" type="Node2D"]
 
@@ -280,7 +280,7 @@ margin_left = 349.296
 margin_top = -111.124
 margin_right = 445.296
 margin_bottom = -91.1241
-custom_styles/fg = SubResource( 31 )
+custom_styles/fg = SubResource( 29 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 max_value = 25.0
 step = 1.0
@@ -301,9 +301,10 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Upgrades"]
-shape = SubResource( 32 )
+shape = SubResource( 30 )
 disabled = true
 
 [node name="ChangeScene" parent="." instance=ExtResource( 26 )]
-position = Vector2( 284.015, -225.699 )
+position = Vector2( 286.015, -225.699 )
 script = ExtResource( 7 )
+target_stage = "res://Scenes/LevelTwo.tscn"
