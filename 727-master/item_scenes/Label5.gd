@@ -1,3 +1,9 @@
+#Name: Label5
+#Purpose: Displays number of gems collected and number of zombies killed.
+#Version/Date: 1.0 - 8 June 2020
+#Author(s): Adrienne C
+#Dependencies: GlobalVars
+
 extends Label
 
 func _ready():

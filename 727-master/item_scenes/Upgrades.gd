@@ -2,7 +2,7 @@
 #Purpose: Spawn upgrade items randomly in the map.
 #Version/Date: 1.0 - 8 June 2020
 #Author(s): Adrienne C, Shirley W
-#Dependencies:
+#Dependencies: Orb.tscn, bubble.tscn
 
 extends KinematicBody2D
 

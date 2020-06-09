@@ -2,7 +2,7 @@
 #Purpose: Includes all actions relating to a Zombie. Allows movement, animation, and interaction.
 #Version/Date: 2.0 - 8 June 2020
 #Author(s): Adrienne C, Shirley W
-#Dependencies:
+#Dependencies: Must have access to gem.tscn in order for gem to drop. Node AnimatedSprite is needed for sprites to function properly. Node HealthBar2 is needed to display sprite health bar.
 
 extends KinematicBody2D
 
@@ -55,7 +55,7 @@ func _physics_process(delta):
 				velocity.y = JUMP_POWER
 				on_ground = false
 				
-		#If touching a wall, go the other direction.
+		#If touching a wall, go the opposite direction.
 		if is_on_wall():
 			dir *= -1
 			$AnimatedSprite/RayCast2D.position.x *= -1
@@ -66,14 +66,14 @@ func _physics_process(delta):
 		else:
 			on_ground = false
 	
-		#Switches direction of zombie depending on direction it's velocity is.
+		#Switches direction of zombie depending on direction of its velocity.
 		if dir > 0:
 			zombie.set_flip_h(false)
 		elif dir < 0:
 			zombie.set_flip_h(true)
 		zombie.play(anim)
 		
-		#Updates zombie health.	
+		#Updates zombie health bar.	
 		hpbar.set_value(health)
 		
 

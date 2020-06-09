@@ -1,3 +1,9 @@
+#Name: HealthBar
+#Purpose: Contributes to displaying health bar for sprite
+#Version/Date: 1.0 - 8 June 2020
+#Author(s): Shirley W
+#Dependencies:
+
 extends ProgressBar
 
 

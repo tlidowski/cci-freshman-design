@@ -2,7 +2,7 @@
 #Purpose: Includes all actions relating to a Zombie. Allows movement, animation, and interaction.
 #Version/Date: 2.0 - 8 June 2020
 #Author(s): Adrienne C, Shirley W
-#Dependencies:
+#Dependencies: Must have access to gem.tscn in order for gem to drop. Node AnimatedSprite is needed for sprites to function properly. Node HealthBar2 is needed to display sprite health bar.
 
 extends KinematicBody2D
 

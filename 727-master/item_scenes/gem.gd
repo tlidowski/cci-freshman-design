@@ -1,8 +1,8 @@
 #Name: Gem
-#Purpose: Allows interaction with the gem sprite.
+#Purpose: Allows interaction with the gem sprite and signals autoloaded singleton GlobalVars to increment gem count.
 #Version/Date: 1.0 - 8 June 2020
 #Author(s): Adrienne C, Shirley W
-#Dependencies:
+#Dependencies: Access to GlobalVars is needed for game to be able to keep incrementing global gem count
 
 extends Area2D
 
