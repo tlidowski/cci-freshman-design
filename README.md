@@ -1,4 +1,5 @@
 Instructions for setting up, testing, deploying and changing the codebase
+
 Describes dependencies and integrations with other systems
 
 The label defined by Label5.gd always displays the current number of gems collected and the current number of zombies killed - the correctness of both of these numbers depends on proper incrementation of the gem_count and zombie_kills variables in GlobalVars.gd. (These variables are then sent as part of signals gemsignal and zombiesignal to Label5, which then formats the numbers and displays as the game runs.)
