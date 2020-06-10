@@ -12,13 +12,13 @@ The Scene tab shows the nodes that create the scene.
 The Inspector tab is initially empty until you click on a Node. This allows you to edit and change specific parts of the Node. 
 The Node tab is where signals can be connected and disconnected.
 
-TESTING AND DEPLOYING
+TESTING AND DEPLOYING<br/>
 To test the game, there are two ways.
     1. Open the folder and open "projectCI.exe". This runs the game.
     2. While editing the project, press the play button at the top right corner. 
         If you would like to test a certain scene, right click that scene in FileSystem. Click Set as Main Scene. Then press play.
         
-CHANGING THE CODEBASE
+CHANGING THE CODEBASE<br/>
 At the top of the the engine, there is a section called "Scripts", this is where you edit the codebase. If you would like to open and view a script, double click it in the FileSystem and it will go to that script.
 All scripts automatically save when you press the play buttom or exit GoDot. You can also press Ctrl+S to save manually.
 Keep in mind that GoDot files are sensitive to where they originate so moving files out of folders or into folders can greatly affect other files!
