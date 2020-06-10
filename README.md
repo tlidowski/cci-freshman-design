@@ -7,7 +7,6 @@ To set up and test, assuming you already have GoDot Engine downloaded:
 3. pen GoDot and drag the extracted 727-master folder into the projects area.
 4. Press Edit to review and begin editing.
 
-    
 The FileSystem, on the right most side of the window has all the files for the game. Files ending in "".gd" are scripts, aka code. Files ending in "".tscn" are the scenes.
 The Scene tab shows the nodes that create the scene.
 The Inspector tab is initially empty until you click on a Node. This allows you to edit and change specific parts of the Node. 
@@ -17,7 +16,8 @@ TESTING AND DEPLOYING<br/>
 To test the game, there are two ways.
 1. Open the folder and open "projectCI.exe". This runs the game.
 2. While editing the project, press the play button at the top right corner. 
-    If you would like to test a certain scene, right click that scene in FileSystem. Click Set as Main Scene. Then press play.
+
+If you would like to test a certain scene, right click that scene in FileSystem. Click Set as Main Scene. Then press play.
         
 CHANGING THE CODEBASE<br/>
 At the top of the the engine, there is a section called "Scripts", this is where you edit the codebase. If you would like to open and view a script, double click it in the FileSystem and it will go to that script.
