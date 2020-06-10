@@ -1,7 +1,29 @@
-Instructions for setting up, testing, deploying and changing the codebase
+**Instructions for setting up, testing, deploying and changing the codebase**
 
-Describes dependencies and integrations with other systems
+SETTING UP
+To set up and test, assuming you already have GoDot Engine downloaded:
+    1. Downloaad 727-master.
+    2. Extract folder.
+    3. Open GoDot and drag the extracted 727-master folder into the projects area.
+    4. Press Edit to review and begin editing.
+    
+The FileSystem, on the right most side of the window has all the files for the game. Files ending in "".gd" are scripts, aka code. Files ending in "".tscn" are the scenes.
+The Scene tab shows the nodes that create the scene.
+The Inspector tab is initially empty until you click on a Node. This allows you to edit and change specific parts of the Node. 
+The Node tab is where signals can be connected and disconnected.
 
+TESTING AND DEPLOYING
+To test the game, there are two ways.
+    1. Open the folder and open "projectCI.exe". This runs the game.
+    2. While editing the project, press the play button at the top right corner. 
+        If you would like to test a certain scene, right click that scene in FileSystem. Click Set as Main Scene. Then press play.
+        
+CHANGING THE CODEBASE
+At the top of the the engine, there is a section called "Scripts", this is where you edit the codebase. If you would like to open and view a script, double click it in the FileSystem and it will go to that script.
+All scripts automatically save when you press the play buttom or exit GoDot. You can also press Ctrl+S to save manually.
+Keep in mind that GoDot files are sensitive to where they originate so moving files out of folders or into folders can greatly affect other files!
+
+**Describes dependencies and integrations with other systems**
 
 The label defined by Label5.gd always displays the current number of gems collected and the current number of zombies killed - the correctness of both of these numbers depends on proper incrementation of the gem_count and zombie_kills variables in GlobalVars.gd. (These variables are then sent as part of signals gemsignal and zombiesignal to Label5, which then formats the numbers and displays as the game runs.)
 
