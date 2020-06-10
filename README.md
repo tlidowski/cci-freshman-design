@@ -1,6 +1,6 @@
 **Instructions for setting up, testing, deploying and changing the codebase**
 
-SETTING UP
+SETTING UP\n
 To set up and test, assuming you already have GoDot Engine downloaded:
     1. Downloaad 727-master.
     2. Extract folder.
