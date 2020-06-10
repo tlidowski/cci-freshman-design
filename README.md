@@ -4,7 +4,7 @@ SETTING UP<br/>
 To set up and test, assuming you already have GoDot Engine downloaded:
 1. Downloaad 727-master.
 2. Extract folder.
-3. pen GoDot and drag the extracted 727-master folder into the projects area.
+3. Open GoDot and drag the extracted 727-master folder into the projects area.
 4. Press Edit to review and begin editing.
 
 The FileSystem, on the right most side of the window has all the files for the game. Files ending in "".gd" are scripts, aka code. Files ending in "".tscn" are the scenes.
